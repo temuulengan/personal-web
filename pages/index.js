@@ -78,49 +78,61 @@ let client = require('contentful').createClient({
 })
 
 export async function getStaticProps() {
-  let data = await client.getEntries({
-    content_type: 'featuredProjects',
-    order: 'fields.order',
-  })
+  try {
+    let data = await client.getEntries({
+      content_type: 'featuredProjects',
+      order: 'fields.order',
+    })
 
-  const blog = new GithubBlog({
-    repo: 'temuulengan/personal-web',
-    token: process.env.GITHUB_TOKEN,
-  })
-  let data2 = await blog.getPosts({
-    query: {
-      author: 'temuulengan',
-      type: 'post',
-      state: 'published',
-    },
-    pager: { limit: 10, offset: 0 },
-  })
+    const blog = new GithubBlog({
+      repo: 'temuulengan/personal-web',
+      token: process.env.GITHUB_TOKEN,
+    })
+    let data2 = await blog.getPosts({
+      query: {
+        author: 'temuulengan',
+        type: 'post',
+        state: 'published',
+      },
+      pager: { limit: 10, offset: 0 },
+    })
 
-  let data3 = await client.getEntries({
-    content_type: 'introduction',
-    limit: 2,
-    order: 'sys.createdAt',
-  })
+    let data3 = await client.getEntries({
+      content_type: 'introduction',
+      limit: 2,
+      order: 'sys.createdAt',
+    })
 
-  let data4 = await client.getEntries({
-    content_type: 'contactMe',
-    limit: 1,
-    order: 'sys.createdAt',
-  })
+    let data4 = await client.getEntries({
+      content_type: 'contactMe',
+      limit: 1,
+      order: 'sys.createdAt',
+    })
 
-  return {
-    props: {
-      projects: data.items,
-      articles: data2.edges
-        .sort(
-          (a, b) =>
-            Date.parse(b.post.frontmatter.date) -
-            Date.parse(a.post.frontmatter.date),
-        )
-        .map((edge) => edge.post)
-        .slice(0, 4),
-      introduction: data3.items,
-      contactMe: data4.items,
-    },
+    return {
+      props: {
+        projects: data.items,
+        articles: data2.edges
+          .sort(
+            (a, b) =>
+              Date.parse(b.post.frontmatter.date) -
+              Date.parse(a.post.frontmatter.date),
+          )
+          .map((edge) => edge.post)
+          .slice(0, 4),
+        introduction: data3.items,
+        contactMe: data4.items,
+      },
+    }
+  } catch (error) {
+    console.error('Error fetching data:', error)
+    return {
+      props: {
+        projects: [],
+        articles: [],
+        introduction: [],
+        contactMe: [],
+      },
+    }
   }
 }

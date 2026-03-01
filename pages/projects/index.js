@@ -110,28 +110,37 @@ export default function Projects({ projects }) {
 }
 
 export async function getStaticProps() {
-  const blog = new GithubBlog({
-    repo: 'temuulengan/personal-web',
-    token: process.env.GITHUB_TOKEN,
-  })
-  const projects = await blog.getPosts({
-    query: {
-      author: 'yourusername',
-      type: 'project',
-      state: 'published',
-    },
-    pager: { limit: 100, offset: 0 },
-  })
+  try {
+    const blog = new GithubBlog({
+      repo: 'temuulengan/personal-web',
+      token: process.env.GITHUB_TOKEN,
+    })
+    const projects = await blog.getPosts({
+      query: {
+        author: 'temuulengan',
+        type: 'project',
+        state: 'published',
+      },
+      pager: { limit: 100, offset: 0 },
+    })
 
-  return {
-    props: {
-      projects: projects.edges
-        .sort(
-          (a, b) =>
-            Date.parse(b.post.frontmatter.date) -
-            Date.parse(a.post.frontmatter.date),
-        )
-        .map((e) => e.post),
-    },
+    return {
+      props: {
+        projects: projects.edges
+          .sort(
+            (a, b) =>
+              Date.parse(b.post.frontmatter.date) -
+              Date.parse(a.post.frontmatter.date),
+          )
+          .map((e) => e.post),
+      },
+    }
+  } catch (error) {
+    console.error('Error fetching projects:', error)
+    return {
+      props: {
+        projects: [],
+      },
+    }
   }
 }

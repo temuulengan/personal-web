@@ -138,26 +138,35 @@ export default function Index({ posts }) {
 }
 
 export async function getStaticProps() {
-  const blog = new GithubBlog({
-    repo: 'temuulengan/personal-web',
-    token: process.env.GITHUB_TOKEN,
-  })
-  const posts = await blog.getPosts({
-    query: {
-      author: 'temuulengan',
-      type: 'post',
-      state: 'published',
-    },
-    pager: { limit: 10, offset: 0 },
-  })
+  try {
+    const blog = new GithubBlog({
+      repo: 'temuulengan/personal-web',
+      token: process.env.GITHUB_TOKEN,
+    })
+    const posts = await blog.getPosts({
+      query: {
+        author: 'temuulengan',
+        type: 'post',
+        state: 'published',
+      },
+      pager: { limit: 10, offset: 0 },
+    })
 
-  return {
-    props: {
-      posts: posts.edges.sort(
-        (a, b) =>
-          Date.parse(b.post.frontmatter.date) -
-          Date.parse(a.post.frontmatter.date),
-      ),
-    },
+    return {
+      props: {
+        posts: posts.edges.sort(
+          (a, b) =>
+            Date.parse(b.post.frontmatter.date) -
+            Date.parse(a.post.frontmatter.date),
+        ),
+      },
+    }
+  } catch (error) {
+    console.error('Error fetching blog posts:', error)
+    return {
+      props: {
+        posts: [],
+      },
+    }
   }
 }

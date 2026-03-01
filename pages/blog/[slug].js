@@ -192,62 +192,77 @@ export default function Post({ metadata, publishedDate, source, toc }) {
 }
 
 export async function getStaticPaths() {
-  const blog = new GithubBlog({
-    repo: 'temuulengan/personal-web',
-    token: process.env.GITHUB_TOKEN,
-  })
+  try {
+    const blog = new GithubBlog({
+      repo: 'temuulengan/personal-web',
+      token: process.env.GITHUB_TOKEN,
+    })
 
-  const data = await blog.getPosts({
-    query: {
-      author: 'temuulengan',
-      type: 'post',
-      state: 'published',
-    },
-    pager: { limit: 10, offset: 0 },
-  })
+    const data = await blog.getPosts({
+      query: {
+        author: 'temuulengan',
+        type: 'post',
+        state: 'published',
+      },
+      pager: { limit: 10, offset: 0 },
+    })
 
-  return {
-    paths: data.edges.map(({ post }) => ({
-      params: { slug: post.frontmatter.slug },
-    })),
-    fallback: false,
+    return {
+      paths: data.edges.map(({ post }) => ({
+        params: { slug: post.frontmatter.slug },
+      })),
+      fallback: false,
+    }
+  } catch (error) {
+    console.error('Error fetching blog paths:', error)
+    return {
+      paths: [],
+      fallback: false,
+    }
   }
 }
 
 export async function getStaticProps({ params }) {
-  const blog = new GithubBlog({
-    repo: 'temuulengan/personal-web',
-    token: process.env.GITHUB_TOKEN,
-  })
-  const data = await blog.getPost({
-    query: {
-      author: 'temuulengan',
-      search: params.slug,
-    },
-  })
-  const article = data.post
-  const source = article.body
-  article.readingTime = readingTime(source).text
-  const mdxSource = await serialize(source, {
-    mdxOptions: {
-      rehypePlugins: [mdxPrism],
-    },
-  })
+  try {
+    const blog = new GithubBlog({
+      repo: 'temuulengan/personal-web',
+      token: process.env.GITHUB_TOKEN,
+    })
+    const data = await blog.getPost({
+      query: {
+        author: 'temuulengan',
+        search: params.slug,
+      },
+    })
+    const article = data.post
+    const source = article.body
+    article.readingTime = readingTime(source).text
+    const mdxSource = await serialize(source, {
+      mdxOptions: {
+        rehypePlugins: [mdxPrism],
+      },
+    })
 
-  const headings = source.match(/#{2,4} .+/g)
-  const toc = headings.map((heading) => {
-    const level = heading.match(/#/g).length - 2
-    const title = heading.replace(/#{2,4} /, '')
-    return { title, level }
-  })
+    const headings = source.match(/#{2,4} .+/g)
+    const toc = headings.map((heading) => {
+      const level = heading.match(/#/g).length - 2
+      const title = heading.replace(/#{2,4} /, '')
+      return { title, level }
+    })
 
-  return {
-    props: {
-      metadata: article,
-      publishedDate: new Date(article.frontmatter.date).toISOString(),
-      source: mdxSource,
-      toc: toc,
-    },
-    revalidate: 30,
+    return {
+      props: {
+        metadata: article,
+        publishedDate: new Date(article.frontmatter.date).toISOString(),
+        source: mdxSource,
+        toc: toc,
+      },
+      revalidate: 30,
+    }
+  } catch (error) {
+    console.error('Error fetching blog post:', error)
+    return {
+      notFound: true,
+    }
   }
 }
