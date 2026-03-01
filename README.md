@@ -2,6 +2,24 @@
 
 A minimal and stylish portfolio website for a Computer Science graduate looking to land a software engineering position.
 
+## 🚀 Quick Start - View Your Portfolio NOW!
+
+### See it locally in 30 seconds:
+```bash
+cd personal-web
+python3 -m http.server 8080
+# Then open: http://localhost:8080
+```
+
+### Deploy to internet for FREE (GitHub Pages):
+1. Go to: https://github.com/temuulengan/personal-web/settings/pages
+2. Select your branch under "Source" and click Save
+3. Your live URL: `https://temuulengan.github.io/personal-web/`
+
+📖 **Detailed Instructions**: See [QUICKSTART.md](QUICKSTART.md) or [DEPLOYMENT.md](DEPLOYMENT.md)
+
+---
+
 ## 🌟 Features
 
 - **Modern & Minimal Design**: Clean, professional aesthetic that focuses on content
