@@ -11,12 +11,17 @@ python3 -m http.server 8080
 # Then open: http://localhost:8080
 ```
 
+🍎 **Mac Users**: See detailed step-by-step Mac Terminal instructions in [MAC_QUICKSTART.md](MAC_QUICKSTART.md)
+
 ### Deploy to internet for FREE (GitHub Pages):
 1. Go to: https://github.com/temuulengan/personal-web/settings/pages
 2. Select your branch under "Source" and click Save
 3. Your live URL: `https://temuulengan.github.io/personal-web/`
 
-📖 **Detailed Instructions**: See [QUICKSTART.md](QUICKSTART.md) or [DEPLOYMENT.md](DEPLOYMENT.md)
+📖 **Detailed Instructions**: 
+- 🍎 Mac Terminal Guide: [MAC_QUICKSTART.md](MAC_QUICKSTART.md) 
+- 📘 General Guide: [QUICKSTART.md](QUICKSTART.md)
+- 🚀 All Deployment Options: [DEPLOYMENT.md](DEPLOYMENT.md)
 
 ---
 

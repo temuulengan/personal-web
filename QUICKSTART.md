@@ -1,13 +1,25 @@
 # 🚀 QUICK START - See Your Portfolio in 30 Seconds!
 
+🍎 **Mac Users**: Looking for detailed Mac Terminal instructions? See [MAC_QUICKSTART.md](MAC_QUICKSTART.md) for a step-by-step Mac-specific guide!
+
+---
+
 ## ⚡ View It RIGHT NOW (3 Simple Steps)
 
 ### Step 1: Open Terminal
-Open your terminal/command prompt and navigate to your project:
+**On Mac**: Press `⌘ + Space`, type "Terminal", press Enter  
+**On Windows**: Press `Win + R`, type "cmd", press Enter  
+**On Linux**: Press `Ctrl + Alt + T`
+
+Navigate to your project folder:
 
 ```bash
-cd /home/runner/work/personal-web/personal-web/
+cd personal-web
 ```
+
+💡 **Mac Tip**: Not sure where your folder is? Open Finder, locate the `personal-web` folder, and drag it onto the Terminal window to auto-fill the path!
+
+💡 **Windows Tip**: You can also right-click the folder in File Explorer and select "Open in Terminal" (Windows 11) or hold Shift + right-click and select "Open PowerShell window here"
 
 ### Step 2: Start Local Server
 Run ONE of these commands (Python is easiest):
@@ -24,12 +36,24 @@ npx http-server -p 8080
 ```
 
 ### Step 3: Open in Browser
-Open your web browser and go to:
+**Option A (Mac)**: Open a new Terminal tab (`⌘ + T`) and run:
+```bash
+open http://localhost:8080
+```
+
+**Option B (Windows)**: Run:
+```bash
+start http://localhost:8080
+```
+
+**Option C (Any OS)**: Open your web browser manually and go to:
 ```
 http://localhost:8080
 ```
 
 **🎉 That's it! Your portfolio is now live locally!**
+
+💡 **To stop the server**: Press `Control + C` (or `Ctrl + C` on Windows) in the Terminal window
 
 ---
 
