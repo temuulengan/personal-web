@@ -16,26 +16,27 @@ export default function LanguageSwitcher({ size = 'md' }) {
     <Menu>
       <MenuButton
         as={Button}
-        rightIcon={<ChevronDownIcon />}
-        size={size}
-        variant="ghost"
+        p="4"
         color="displayColor"
+        fontSize="16px"
         _hover={{ bg: '#111' }}
         _active={{ bg: '#111' }}
+        variant="ghost"
       >
         <Text as="span" mr={1}>
           {languages[language].flag}
         </Text>
         {languages[language].name}
+        <ChevronDownIcon ml={2} />
       </MenuButton>
       <MenuList bg="secondary" borderColor="borderColor">
         {Object.entries(languages).map(([code, lang]) => (
           <MenuItem
             key={code}
-            onClick={() => changeLanguage(code)}
-            bg={language === code ? '#111' : 'secondary'}
             color="displayColor"
+            bg={language === code ? '#111' : 'secondary'}
             _hover={{ bg: '#111' }}
+            onClick={() => changeLanguage(code)}
           >
             <Text as="span" mr={2}>
               {lang.flag}
