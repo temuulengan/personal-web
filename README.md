@@ -59,12 +59,26 @@ This is a modern, responsive portfolio website template based on the open-source
    ```
 
    Update the following variables:
-   - `NEXT_PUBLIC_BASE_URL`: Your website URL
+   - `NEXT_PUBLIC_BASE_URL`: Your website URL (default: `http://localhost:8080`)
+   - `PORT`: Server port (default: `8080`)
    - `CONTENTFUL_SPACE_ID`: Your Contentful space ID
    - `CONTENTFUL_ACCESS_TOKEN`: Your Contentful access token
    - `FIREBASE_*`: Your Firebase configuration
    - `GITHUB_TOKEN`: Your GitHub personal access token
    - `NEXT_PUBLIC_UA_CODE`: Your Google Analytics tracking ID
+
+4. **Run the development server**
+   ```bash
+   npm run dev
+   # Server will start on http://localhost:8080
+   ```
+
+5. **Build for production**
+   ```bash
+   npm run build
+   npm start
+   # Production server will start on http://localhost:8080
+   ```
 
 ### Setting Up Contentful
 
@@ -217,6 +231,47 @@ Open [http://localhost:3000](http://localhost:3000) to see your website.
 5. Deploy!
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/yourusername/your-repo)
+
+### Deploy on Custom Server (Port 8080)
+
+The application is pre-configured to run on port 8080. To deploy on your own server:
+
+1. **Build the application**
+   ```bash
+   npm run build
+   ```
+
+2. **Start the production server**
+   ```bash
+   npm start
+   # Server will start on http://localhost:8080
+   ```
+
+3. **Using PM2 (recommended for production)**
+   ```bash
+   npm install -g pm2
+   pm2 start npm --name "personal-web" -- start
+   pm2 save
+   pm2 startup
+   ```
+
+4. **Using custom port**
+   
+   You can change the port by editing `package.json` scripts or setting the `PORT` environment variable:
+   ```bash
+   PORT=8080 npm start
+   ```
+
+## 🐛 Troubleshooting
+
+### Contentful Error: "Expected parameter accessToken"
+
+If you see this error, make sure:
+1. You have copied `.env.example` to `.env.local`
+2. You have filled in your `CONTENTFUL_SPACE_ID` and `CONTENTFUL_ACCESS_TOKEN`
+3. Your Contentful credentials are valid
+
+The application now handles missing Contentful credentials gracefully with fallback values.
 
 ## 📝 License
 

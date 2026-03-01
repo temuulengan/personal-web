@@ -72,13 +72,15 @@ export default function Index({ introduction, projects, articles, contactMe }) {
   )
 }
 
-let client = require('contentful').createClient({
-  space: process.env.CONTENTFUL_SPACE_ID,
-  accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
-})
-
 export async function getStaticProps() {
   try {
+    // Create Contentful client inside getStaticProps to ensure env vars are available
+    const contentful = require('contentful')
+    const client = contentful.createClient({
+      space: process.env.CONTENTFUL_SPACE_ID || '',
+      accessToken: process.env.CONTENTFUL_ACCESS_TOKEN || '',
+    })
+
     let data = await client.getEntries({
       content_type: 'featuredProjects',
       order: 'fields.order',
