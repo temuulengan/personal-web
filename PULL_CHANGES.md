@@ -260,7 +260,122 @@ git clone https://github.com/temuulengan/personal-web.git
 
 ---
 
-### Problem 3: "Not a git repository"
+### Problem 3: "Not a git repository" + "destination path already exists"
+
+**Your Situation:**
+```bash
+# You're in a folder called personal-web-main
+(base) user@Mac personal-web-main % git pull origin copilot/polish-portfolio-website-code
+fatal: not a git repository (or any of the parent directories): .git
+
+# You try to clone but...
+(base) user@Mac personal-web-main % git clone https://github.com/temuulengan/personal-web.git
+fatal: destination path 'personal-web' already exists and is not an empty directory.
+```
+
+**What Happened:**
+1. You downloaded the repository as a **ZIP file** (that's why it's called `personal-web-main`)
+2. ZIP downloads don't include the `.git` folder, so it's not a git repository
+3. You already have a folder named `personal-web` somewhere in the same directory
+
+**✅ Solution - Choose ONE Option:**
+
+**Option A: Use the Existing Git Repository (If you have one)**
+
+Check if you have a proper git repository already:
+
+```bash
+# Go up one directory
+cd ..
+
+# List all folders
+ls -la
+
+# You should see both:
+# - personal-web-main (the ZIP download - NOT a git repo)
+# - personal-web (might be a git repo)
+
+# Check if personal-web is a git repository
+cd personal-web
+git status
+
+# If it shows branch info, it's a git repo! Use it:
+git pull origin copilot/polish-portfolio-website-code
+```
+
+**Option B: Delete ZIP and Clone Fresh (Recommended)**
+
+```bash
+# Go to parent directory
+cd ..
+
+# Delete the ZIP folder (it's not a git repo anyway)
+rm -rf personal-web-main
+
+# Also check if there's an old personal-web folder
+ls -la
+
+# If personal-web exists and you don't need it, delete it too
+rm -rf personal-web
+
+# Now clone fresh
+git clone https://github.com/temuulengan/personal-web.git
+
+# Navigate in
+cd personal-web
+
+# Verify it's a git repository
+git status
+
+# You should see your branch info!
+```
+
+**Option C: Clone to a Different Name**
+
+```bash
+# Clone with a custom folder name
+git clone https://github.com/temuulengan/personal-web.git my-portfolio
+
+# Navigate in
+cd my-portfolio
+
+# Now you can use git pull
+git pull origin copilot/polish-portfolio-website-code
+```
+
+**Option D: Convert Your ZIP to Git Repository**
+
+If you want to keep your current folder:
+
+```bash
+# Make sure you're in the personal-web-main folder
+cd personal-web-main
+
+# Initialize git
+git init
+
+# Add the remote
+git remote add origin https://github.com/temuulengan/personal-web.git
+
+# Fetch all branches
+git fetch origin
+
+# Switch to the branch you want
+git checkout copilot/polish-portfolio-website-code
+
+# Now you can use git pull in the future
+git pull origin copilot/polish-portfolio-website-code
+```
+
+**Understanding the Folder Names:**
+- `personal-web-main` = ZIP download from GitHub (no `.git` folder)
+- `personal-web` = Proper git clone (has `.git` folder)
+
+💡 **Best Practice:** Always use `git clone` instead of downloading ZIP so you can easily pull updates!
+
+---
+
+### Problem 4: "Not a git repository" (Simple Case)
 
 **Error Message:**
 ```
@@ -285,7 +400,7 @@ git checkout copilot/polish-portfolio-website-code
 
 ---
 
-### Problem 4: "Your local changes would be overwritten"
+### Problem 5: "Your local changes would be overwritten"
 
 **Error Message:**
 ```
@@ -315,7 +430,7 @@ git pull origin copilot/polish-portfolio-website-code
 
 ---
 
-### Problem 5: "Could not find branch"
+### Problem 6: "Could not find branch"
 
 **Error Message:**
 ```
@@ -335,7 +450,7 @@ git pull origin main
 
 ---
 
-### Problem 6: "Permission denied (publickey)"
+### Problem 7: "Permission denied (publickey)"
 
 **Error Message:**
 ```
@@ -352,7 +467,7 @@ git pull origin copilot/polish-portfolio-website-code
 
 ---
 
-### Problem 7: Merge Conflicts
+### Problem 8: Merge Conflicts
 
 **Error Message:**
 ```
@@ -419,7 +534,7 @@ git checkout copilot/polish-portfolio-website-code
 
 ---
 
-### Problem 8: Website Shows No Design / Looks Plain
+### Problem 9: Website Shows No Design / Looks Plain
 
 **Symptoms:**
 - Website opens but looks like plain text with no styling
