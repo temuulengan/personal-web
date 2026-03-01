@@ -170,7 +170,7 @@ export default function Introduction({ introduction }) {
               Email
             </Button>
           </Link>
-          <Link href="/resumetest1.pdf" isExternal download>
+          <Link href="/resume.pdf" isExternal download>
             <Button
               pos="static"
               color="white"
