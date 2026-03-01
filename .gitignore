@@ -29,6 +29,8 @@ dist/
 build/
 *.min.js
 *.min.css
+.next/
+public/
 
 # Dependencies (if you add them later)
 node_modules/
