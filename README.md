@@ -4,6 +4,19 @@ A minimal and stylish portfolio website for a Computer Science graduate looking 
 
 ## 🚀 Quick Start - View Your Portfolio NOW!
 
+### 🔄 Already Have the Repository? Get Latest Changes!
+
+If you already have the portfolio on your computer and want to get the **latest fancy design updates**:
+
+```bash
+cd personal-web
+git pull origin copilot/polish-portfolio-website-code
+```
+
+📖 **See full instructions**: [PULL_CHANGES.md](PULL_CHANGES.md)
+
+---
+
 ### First: Download the repository to your computer
 ```bash
 # If you have git installed:
@@ -33,6 +46,7 @@ python3 -m http.server 8080
 📖 **Detailed Instructions**: 
 - 🍎 Mac Terminal Guide: [MAC_QUICKSTART.md](MAC_QUICKSTART.md) 
 - 📘 General Guide: [QUICKSTART.md](QUICKSTART.md)
+- 🔄 Pull Latest Changes: [PULL_CHANGES.md](PULL_CHANGES.md)
 - 🚀 All Deployment Options: [DEPLOYMENT.md](DEPLOYMENT.md)
 
 ---
