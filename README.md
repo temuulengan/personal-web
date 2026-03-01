@@ -264,6 +264,21 @@ The application is pre-configured to run on port 8080. To deploy on your own ser
 
 ## 🐛 Troubleshooting
 
+### Production Server Error: "Could not find a production build"
+
+If you see this error when running `npm start`:
+```
+Error: Could not find a production build in the '.next' directory
+```
+
+**Solution:** Build the application first:
+```bash
+npm run build
+npm start
+```
+
+📖 **For more common issues and solutions, see [BUILD_TROUBLESHOOTING.md](./BUILD_TROUBLESHOOTING.md)**
+
 ### Contentful Error: "Expected parameter accessToken"
 
 If you see this error, make sure:
