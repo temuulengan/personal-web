@@ -70,6 +70,61 @@ You should now see the new fancy portfolio files!
 
 ---
 
+## 🔍 How to Tell If You Have a Git Repository
+
+Not sure if your folder is a Git repository? Here's how to check:
+
+### Method 1: Check for `.git` directory
+
+```bash
+# Navigate to your project folder
+cd personal-web
+
+# List all files including hidden ones
+ls -la
+
+# Or specifically check for .git
+ls -la .git/
+```
+
+**If you have a Git repository**, you'll see a `.git/` directory with structure like:
+```
+.git/
+├── config
+├── description
+├── HEAD
+├── hooks/
+├── index
+├── info/
+├── logs/
+├── objects/
+├── packed-refs
+└── refs/
+```
+
+**If you don't see `.git/`**, you either:
+- Downloaded the repository as a ZIP file (not cloned)
+- Are in the wrong directory
+- Need to initialize Git (see Problem 2 below)
+
+### Method 2: Use Git command
+
+```bash
+# Check if current folder is a Git repository
+git status
+```
+
+**If it's a Git repo**, you'll see branch info and file status.
+
+**If it's NOT a Git repo**, you'll see:
+```
+fatal: not a git repository (or any of the parent directories): .git
+```
+
+💡 **Pro Tip:** The `.git` folder contains all your Git history and configuration. Don't delete it or you'll lose your Git capabilities!
+
+---
+
 ## 🔍 Check Which Branch You're On
 
 Before pulling, you can check which branch you're currently on:
