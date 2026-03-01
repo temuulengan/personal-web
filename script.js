@@ -226,10 +226,14 @@ function initThemeToggle() {
     const themeToggle = document.querySelector('.theme-toggle');
     const body = document.body;
     
-    // Check for saved theme preference
+    // Check for saved theme preference, default to dark if not set
     const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'dark') {
+    if (savedTheme === 'dark' || savedTheme === null) {
+        // Default to dark mode
         body.classList.add('dark-mode');
+        if (savedTheme === null) {
+            localStorage.setItem('theme', 'dark');
+        }
     }
     
     themeToggle.addEventListener('click', () => {
