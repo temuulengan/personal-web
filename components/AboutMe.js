@@ -107,8 +107,8 @@ export default function AboutMe() {
               <Image
                 w={{ base: '300px', lg: '350px' }}
                 h={{ base: '300px', lg: '350px' }}
-                objectFit="cover"
                 borderRadius="50%"
+                objectFit="cover"
                 alt="Temuulen Gan"
                 src="https://via.placeholder.com/350"
               />

@@ -138,7 +138,7 @@ const MDXComponents = {
   ),
   img: (props) => (
     <Center>
-      <Box width={{ base: '100%', md: '80%' }} height="auto" maxWidth="1366px">
+      <Box w={{ base: '100%', md: '80%' }} maxW="1366px" h="auto">
         <Image
           src={props.src}
           width={1366}
