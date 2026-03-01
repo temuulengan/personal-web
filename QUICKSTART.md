@@ -19,12 +19,16 @@ git --version
 # Windows: download from https://git-scm.com/
 # Linux: sudo apt install git
 
-# Clone the repository
+# Clone the repository (COPY THIS ENTIRE LINE!)
 git clone https://github.com/temuulengan/personal-web.git
 
 # Navigate into it
 cd personal-web
 ```
+
+⚠️ **Common Mistake:** Don't just type the URL alone! You MUST include `git clone` before it:
+- ❌ Wrong: `https://github.com/temuulengan/personal-web.git`
+- ✅ Right: `git clone https://github.com/temuulengan/personal-web.git`
 
 ### Option B: Download as ZIP (No Git Required)
 

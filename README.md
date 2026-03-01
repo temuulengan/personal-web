@@ -81,6 +81,8 @@ personal-web/
    git clone https://github.com/temuulengan/personal-web.git
    cd personal-web
    ```
+   
+   💡 **Note:** Make sure to include `git clone` before the URL. Just pasting the URL alone (`https://github.com/...`) will give an error!
 
 2. Open `index.html` in your browser:
    - Double-click the `index.html` file, or

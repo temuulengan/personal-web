@@ -53,11 +53,17 @@ git --version
 # Navigate to where you want to save it (e.g., Desktop)
 cd ~/Desktop
 
-# Clone the repository
+# Clone the repository (COPY THIS ENTIRE LINE!)
 git clone https://github.com/temuulengan/personal-web.git
 
 # You should see: "Cloning into 'personal-web'..."
 ```
+
+⚠️ **Common Mac Terminal Mistake:** Don't just paste the URL alone!
+- ❌ Wrong: `https://github.com/temuulengan/personal-web.git`
+  - This gives: `zsh: no such file or directory`
+- ✅ Right: `git clone https://github.com/temuulengan/personal-web.git`
+  - Always include `git clone` before the URL!
 
 ✅ **Success!** The repository is now on your Mac in the `personal-web` folder!
 

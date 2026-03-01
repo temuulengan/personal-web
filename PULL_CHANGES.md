@@ -89,6 +89,65 @@ git checkout copilot/polish-portfolio-website-code
 
 ## 🆘 Troubleshooting
 
+### Problem 0: "zsh: no such file or directory" or "command not found"
+
+**Error Message:**
+```
+zsh: no such file or directory: https://github.com/temuulengan/personal-web.git
+```
+Or on Windows:
+```
+'https:' is not recognized as an internal or external command
+```
+
+**What Happened:** You tried to run the GitHub URL directly without the `git clone` command!
+
+**Solution:** You need to add `git clone` before the URL:
+
+```bash
+# ❌ WRONG - This won't work
+https://github.com/temuulengan/personal-web.git
+
+# ✅ CORRECT - This is the right way
+git clone https://github.com/temuulengan/personal-web.git
+```
+
+**Full Step-by-Step:**
+
+1. **Open Terminal** (Mac: `⌘ + Space`, type "Terminal")
+
+2. **Navigate to where you want to save the project**:
+   ```bash
+   # Go to Desktop
+   cd ~/Desktop
+   
+   # Or Documents
+   cd ~/Documents
+   ```
+
+3. **Clone the repository** (copy this ENTIRE command):
+   ```bash
+   git clone https://github.com/temuulengan/personal-web.git
+   ```
+
+4. **Navigate into the folder**:
+   ```bash
+   cd personal-web
+   ```
+
+5. **Start the server**:
+   ```bash
+   python3 -m http.server 8080
+   ```
+
+6. **Open in browser**: http://localhost:8080
+
+🎉 **That's it!** Your portfolio should now be running!
+
+💡 **Remember:** Always use `git clone` followed by the URL, not just the URL alone!
+
+---
+
 ### Problem 1: "Not a git repository"
 
 **Error Message:**
