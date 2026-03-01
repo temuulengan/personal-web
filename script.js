@@ -228,10 +228,10 @@ function initThemeToggle() {
     
     // Check for saved theme preference, default to dark if not set
     const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'dark' || savedTheme === null) {
+    if (savedTheme === 'dark' || !savedTheme) {
         // Default to dark mode
         body.classList.add('dark-mode');
-        if (savedTheme === null) {
+        if (!savedTheme) {
             localStorage.setItem('theme', 'dark');
         }
     }
