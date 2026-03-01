@@ -2,6 +2,8 @@
 
 This repository contains guides for common Git issues you might encounter.
 
+> **Note:** These guides reference the `copilot/add-multi-language-support` branch. If you're working on a different branch, substitute your branch name in the commands.
+
 ---
 
 ## 📚 Available Guides
