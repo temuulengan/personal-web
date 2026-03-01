@@ -21,9 +21,15 @@ These files are now removed from git tracking but still exist locally and will b
 
 ## How to Resolve on Your Local Machine
 
+### ⚠️ IMPORTANT: Check the Filename
+The file is `sitemap-0.xml` with a **ZERO (0)**, not the letter 'o'.
+Common typo: `sitemap-o.xml` ❌  
+Correct: `sitemap-0.xml` ✅
+
 ### Option 1: Quick Fix (Recommended)
 ```bash
 # Discard your local changes to the sitemap file
+# NOTE: This is ZERO (0), not letter 'o'
 git restore public/sitemap-0.xml
 
 # Pull the latest changes
@@ -79,6 +85,48 @@ ls -la public/sitemap*.xml
 
 # Start the dev server to test
 npm run dev
+```
+
+## Troubleshooting
+
+### "pathspec 'public/sitemap-o.xml' did not match any file(s) known to git"
+**Problem:** You typed the letter 'o' instead of the number '0'.  
+**Solution:** Use `sitemap-0.xml` (with a ZERO).
+
+### Still Getting the Same Error After git restore?
+If `git restore public/sitemap-0.xml` doesn't work, try these alternatives:
+
+**Check if the file exists:**
+```bash
+ls -la public/sitemap-0.xml
+```
+
+**If the file exists, force remove it:**
+```bash
+# Option A: Remove the file directly
+rm public/sitemap-0.xml
+git pull origin copilot/update-personal-website
+
+# Option B: Use git checkout
+git checkout -- public/sitemap-0.xml
+git pull origin copilot/update-personal-website
+
+# Option C: Stash everything
+git stash
+git pull origin copilot/update-personal-website
+git stash drop
+```
+
+### The File is Still Causing Issues
+If none of the above work, you may be on an old commit. Try:
+```bash
+# Check your current commit
+git log --oneline -1
+
+# Force update to match remote (⚠️ this will discard ALL local changes)
+git fetch origin copilot/update-personal-website
+git reset --hard origin/copilot/update-personal-website
+npm run build
 ```
 
 ## Summary
