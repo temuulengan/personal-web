@@ -8,6 +8,7 @@
     <meta name="author" content="Temuulen Ganochir">
     <title>Temuulen Ganochir - Software Developer</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="translations.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -29,13 +30,18 @@
                 <span class="brand-symbol">{ TG }</span>
             </div>
             <ul class="nav-menu">
-                <li><a href="#home" class="nav-link">Home</a></li>
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#skills" class="nav-link">Skills</a></li>
-                <li><a href="#projects" class="nav-link">Projects</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
+                <li><a href="#home" class="nav-link" data-i18n="nav.home">Home</a></li>
+                <li><a href="#about" class="nav-link" data-i18n="nav.about">About</a></li>
+                <li><a href="#skills" class="nav-link" data-i18n="nav.skills">Skills</a></li>
+                <li><a href="#projects" class="nav-link" data-i18n="nav.projects">Projects</a></li>
+                <li><a href="#contact" class="nav-link" data-i18n="nav.contact">Contact</a></li>
             </ul>
             <div class="nav-actions">
+                <div class="language-selector">
+                    <button class="language-btn" data-lang="en" title="English">EN</button>
+                    <button class="language-btn" data-lang="mn" title="Монгол">МН</button>
+                    <button class="language-btn" data-lang="ko" title="한국어">KO</button>
+                </div>
                 <button class="theme-toggle" aria-label="Toggle theme" title="Toggle Dark/Light Mode">
                     <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <circle cx="12" cy="12" r="5"></circle>
@@ -67,25 +73,25 @@
             <div class="hero-content">
                 <div class="hero-badge">
                     <span class="badge-dot"></span>
-                    Available for opportunities
+                    <span data-i18n="hero.availability">Available for opportunities</span>
                 </div>
                 <h1 class="hero-title">
-                    Hi, I'm <span class="highlight gradient-text">Temuulen Ganochir</span>
+                    <span data-i18n="hero.greeting">Hi, I'm</span> <span class="highlight gradient-text">Temuulen Ganochir</span>
                     <span class="wave">👋</span>
                 </h1>
-                <p class="hero-subtitle typing-text">Software Developer | Ulaanbaatar</p>
-                <p class="hero-description">
+                <p class="hero-subtitle typing-text" data-i18n="hero.subtitle">Software Developer | Ulaanbaatar</p>
+                <p class="hero-description" data-i18n="hero.description">
                     Computer Science graduate from SeoulTech with hands-on experience in full-stack and AI-integrated development. Focused on building reliable, data-driven applications that create real value.
                 </p>
                 <div class="hero-buttons">
-                    <a href="#contact" class="btn btn-primary">
+                    <a href="#contact" class="btn btn-primary" data-i18n="hero.contactButton">
                         <span>Get In Touch</span>
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <line x1="5" y1="12" x2="19" y2="12"></line>
                             <polyline points="12 5 19 12 12 19"></polyline>
                         </svg>
                     </a>
-                    <a href="resumetest1.pdf" class="btn btn-secondary" download>
+                    <a href="resumetest1.pdf" class="btn btn-secondary" download data-i18n="hero.resumeButton">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
                             <polyline points="7 10 12 15 17 10"></polyline>
@@ -138,30 +144,31 @@
     <!-- About Section -->
     <section id="about" class="about">
         <div class="container">
-            <h2 class="section-title">About Me</h2>
+            <h2 class="section-title" data-i18n="about.title">About Me</h2>
+            <p class="section-subtitle" data-i18n="about.subtitle">Get to know me better</p>
             <div class="about-content">
                 <div class="about-text">
-                    <p>
-                        I'm a Computer Science graduate from Seoul National University of Science and Technology (SeoulTech) with hands-on experience in full-stack and AI-integrated development. My academic journey has equipped me with comprehensive knowledge in data structures, algorithms, artificial intelligence, database systems, and software engineering principles.
+                    <p data-i18n="about.paragraph1">
+                        I'm a Computer Science graduate from Seoul National University of Science and Technology (SeoulTech), with a strong foundation in software development and a passion for creating meaningful technology solutions.
                     </p>
-                    <p>
-                        I'm focused on building reliable, data-driven applications that create real value. I believe in writing clean, maintainable code and continuously learning new technologies to stay current in this ever-evolving field. I speak English, Korean, and Mongolian fluently.
+                    <p data-i18n="about.paragraph2">
+                        My journey in tech has led me to work on diverse projects, from building AI-powered applications to developing full-stack web solutions. I'm particularly interested in machine learning, web development, and creating user-centric applications that solve real-world problems.
                     </p>
                     <div class="about-highlights">
                         <div class="highlight-item">
                             <div class="highlight-icon">🎓</div>
-                            <h3>Education</h3>
-                            <p>Bachelor of Science in Computer Science<br>Seoul National University of Science and Technology (SeoulTech)<br>Graduation: August 2026</p>
+                            <h3 data-i18n="about.educationLabel">Education</h3>
+                            <p data-i18n="about.educationValue">B.S. Computer Science - SeoulTech</p>
                         </div>
                         <div class="highlight-item">
                             <div class="highlight-icon">💻</div>
-                            <h3>Focus</h3>
-                            <p>Full-Stack & AI-Integrated Development</p>
+                            <h3 data-i18n="about.focusLabel">Focus</h3>
+                            <p data-i18n="about.focusValue">Full-Stack & AI Development</p>
                         </div>
                         <div class="highlight-item">
                             <div class="highlight-icon">🚀</div>
-                            <h3>Goal</h3>
-                            <p>Build Impactful Software Solutions</p>
+                            <h3 data-i18n="about.goalLabel">Goal</h3>
+                            <p data-i18n="about.goalValue">Build impactful software</p>
                         </div>
                     </div>
                 </div>
@@ -172,8 +179,8 @@
     <!-- Skills Section -->
     <section id="skills" class="skills">
         <div class="container">
-            <h2 class="section-title">Technical Skills</h2>
-            <p class="section-subtitle">Technologies I work with</p>
+            <h2 class="section-title" data-i18n="skills.title">Technical Skills</h2>
+            <p class="section-subtitle" data-i18n="skills.subtitle">Technologies I work with</p>
             <div class="skills-grid">
                 <div class="skill-category">
                     <div class="category-header">
@@ -181,7 +188,7 @@
                             <polyline points="16 18 22 12 16 6"></polyline>
                             <polyline points="8 6 2 12 8 18"></polyline>
                         </svg>
-                        <h3>Languages</h3>
+                        <h3 data-i18n="skills.categories.languages">Languages</h3>
                     </div>
                     <div class="skill-bars">
                         <div class="skill-bar">
@@ -238,7 +245,7 @@
                             <line x1="8" y1="21" x2="16" y2="21"></line>
                             <line x1="12" y1="17" x2="12" y2="21"></line>
                         </svg>
-                        <h3>Frameworks & Libraries</h3>
+                        <h3 data-i18n="skills.categories.frameworks">Frameworks & Libraries</h3>
                     </div>
                     <div class="skill-tags">
                         <span class="skill-tag">
@@ -291,7 +298,7 @@
                             <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
                             <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
                         </svg>
-                        <h3>Tools & Technologies</h3>
+                        <h3 data-i18n="skills.categories.tools">Tools & Technologies</h3>
                     </div>
                     <div class="skill-tags">
                         <span class="skill-tag">
@@ -350,7 +357,7 @@
                             <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
                             <path d="M2 17l10 5 10-5M2 12l10 5 10-5"></path>
                         </svg>
-                        <h3>Spoken Languages</h3>
+                        <h3 data-i18n="skills.categories.spoken">Spoken Languages</h3>
                     </div>
                     <div class="skill-tags">
                         <span class="skill-tag">
@@ -380,8 +387,8 @@
     <!-- Projects Section -->
     <section id="projects" class="projects">
         <div class="container">
-            <h2 class="section-title">Featured Projects</h2>
-            <p class="section-subtitle">Some of my recent work</p>
+            <h2 class="section-title" data-i18n="projects.title">Featured Projects</h2>
+            <p class="section-subtitle" data-i18n="projects.subtitle">Some of my recent work</p>
             <div class="projects-grid">
                 <div class="project-card">
                     <div class="project-image">
@@ -405,8 +412,8 @@
                         <div class="project-placeholder" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);"></div>
                     </div>
                     <div class="project-content">
-                        <h3>PortfolioIQ — AI-Powered Financial Portfolio Analyzer</h3>
-                        <p class="project-description">
+                        <h3 data-i18n="projects.project1.title">PortfolioIQ — AI-Powered Financial Portfolio Analyzer</h3>
+                        <p class="project-description" data-i18n="projects.project1.description">
                             Capstone project: Executed the full Software Development lifecycle for a mobile app analyzing stock/index portfolios. Integrated Yahoo Finance API to process real-time market data for automated risk assessment. Conducted iterative testing of PDF upload and manual input modules to ensure 100% data ingestion accuracy.
                         </p>
                         <div class="project-tags">
@@ -439,8 +446,8 @@
                         <div class="project-placeholder" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);"></div>
                     </div>
                     <div class="project-content">
-                        <h3>AI Recipe Chat — Intelligent Cooking Assistant Website</h3>
-                        <p class="project-description">
+                        <h3 data-i18n="projects.project2.title">AI Recipe Chat — Intelligent Cooking Assistant Website</h3>
+                        <p class="project-description" data-i18n="projects.project2.description">
                             Served as Frontend Lead in an Agile team environment, delivering a personalized recipe recommendation engine. Optimized user experience by levelling up the interface with OpenAI-powered chat functionality. Collaborated on rapid prototyping and feature testing to ensure seamless natural language conversation flows.
                         </p>
                         <div class="project-tags">
@@ -473,8 +480,8 @@
                         <div class="project-placeholder" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);"></div>
                     </div>
                     <div class="project-content">
-                        <h3>FinGuard — Emotion-Driven Personal Financial Risk Database</h3>
-                        <p class="project-description">
+                        <h3 data-i18n="projects.project3.title">FinGuard — Emotion-Driven Personal Financial Risk Database</h3>
+                        <p class="project-description" data-i18n="projects.project3.description">
                             Database Course Project: Designed a complex data architecture featuring schema normalization and behavioral pattern analysis. Performed advanced data modeling to classify financial risks based on emotional input. Produced structured analytical reports, testing database queries for performance and accuracy.
                         </p>
                         <div class="project-tags">
@@ -492,9 +499,9 @@
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
+            <h2 class="section-title" data-i18n="contact.title">Get In Touch</h2>
             <div class="contact-content">
-                <p class="contact-description">
+                <p class="contact-description" data-i18n="contact.description">
                     I'm currently looking for new opportunities. Whether you have a question 
                     or just want to say hi, feel free to reach out!
                 </p>
@@ -510,7 +517,7 @@
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
                         </svg>
-                        <span>GitHub</span>
+                        <span data-i18n="contact.github">GitHub</span>
                     </a>
                 </div>
             </div>
@@ -520,8 +527,8 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2026 Temuulen Ganochir. All rights reserved.</p>
-            <p class="footer-tagline">Built with passion and dedication.</p>
+            <p data-i18n="footer.copyright">&copy; 2026 Temuulen Ganochir. All rights reserved.</p>
+            <p class="footer-tagline" data-i18n="footer.tagline">Built with passion and dedication.</p>
         </div>
     </footer>
 

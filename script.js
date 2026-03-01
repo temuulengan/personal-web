@@ -1,4 +1,127 @@
 // ==========================================
+// Multi-Language Support
+// ==========================================
+let currentLanguage = localStorage.getItem('language') || 'en';
+
+function initLanguageSelector() {
+    const languageSelector = document.querySelector('.language-selector');
+    const languageButtons = document.querySelectorAll('.language-btn');
+    
+    // Set initial active language
+    updateActiveLanguage(currentLanguage);
+    
+    // Add click listeners to language buttons
+    languageButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const lang = btn.getAttribute('data-lang');
+            if (lang !== currentLanguage) {
+                currentLanguage = lang;
+                localStorage.setItem('language', lang);
+                updateActiveLanguage(lang);
+                translatePage(lang);
+            }
+        });
+    });
+    
+    // Translate page on load
+    translatePage(currentLanguage);
+}
+
+function updateActiveLanguage(lang) {
+    const languageButtons = document.querySelectorAll('.language-btn');
+    languageButtons.forEach(btn => {
+        if (btn.getAttribute('data-lang') === lang) {
+            btn.classList.add('active');
+        } else {
+            btn.classList.remove('active');
+        }
+    });
+    
+    // Update HTML lang attribute
+    document.documentElement.setAttribute('lang', lang);
+}
+
+function translatePage(lang) {
+    if (!translations[lang]) {
+        console.error(`Translations for language "${lang}" not found`);
+        return;
+    }
+    
+    const t = translations[lang];
+    
+    // Navigation
+    document.querySelector('[data-i18n="nav.home"]').textContent = t.nav.home;
+    document.querySelector('[data-i18n="nav.about"]').textContent = t.nav.about;
+    document.querySelector('[data-i18n="nav.skills"]').textContent = t.nav.skills;
+    document.querySelector('[data-i18n="nav.projects"]').textContent = t.nav.projects;
+    document.querySelector('[data-i18n="nav.contact"]').textContent = t.nav.contact;
+    
+    // Hero Section
+    document.querySelector('[data-i18n="hero.availability"]').textContent = t.hero.availability;
+    document.querySelector('[data-i18n="hero.greeting"]').textContent = t.hero.greeting;
+    document.querySelector('[data-i18n="hero.subtitle"]').textContent = t.hero.subtitle;
+    document.querySelector('[data-i18n="hero.description"]').textContent = t.hero.description;
+    document.querySelector('[data-i18n="hero.contactButton"]').innerHTML = `<span>${t.hero.contactButton}</span>` + document.querySelector('[data-i18n="hero.contactButton"]').querySelector('svg').outerHTML;
+    document.querySelector('[data-i18n="hero.resumeButton"]').innerHTML = document.querySelector('[data-i18n="hero.resumeButton"]').querySelector('svg').outerHTML + `<span>${t.hero.resumeButton}</span>`;
+    
+    // About Section
+    document.querySelector('[data-i18n="about.title"]').textContent = t.about.title;
+    document.querySelector('[data-i18n="about.subtitle"]').textContent = t.about.subtitle;
+    document.querySelector('[data-i18n="about.paragraph1"]').textContent = t.about.paragraph1;
+    document.querySelector('[data-i18n="about.paragraph2"]').textContent = t.about.paragraph2;
+    document.querySelector('[data-i18n="about.educationLabel"]').textContent = t.about.educationLabel;
+    document.querySelector('[data-i18n="about.educationValue"]').textContent = t.about.educationValue;
+    document.querySelector('[data-i18n="about.focusLabel"]').textContent = t.about.focusLabel;
+    document.querySelector('[data-i18n="about.focusValue"]').textContent = t.about.focusValue;
+    document.querySelector('[data-i18n="about.goalLabel"]').textContent = t.about.goalLabel;
+    document.querySelector('[data-i18n="about.goalValue"]').textContent = t.about.goalValue;
+    
+    // Skills Section
+    document.querySelector('[data-i18n="skills.title"]').textContent = t.skills.title;
+    document.querySelector('[data-i18n="skills.subtitle"]').textContent = t.skills.subtitle;
+    document.querySelector('[data-i18n="skills.categories.languages"]').textContent = t.skills.categories.languages;
+    document.querySelector('[data-i18n="skills.categories.frameworks"]').textContent = t.skills.categories.frameworks;
+    document.querySelector('[data-i18n="skills.categories.tools"]').textContent = t.skills.categories.tools;
+    document.querySelector('[data-i18n="skills.categories.spoken"]').textContent = t.skills.categories.spoken;
+    
+    // Projects Section
+    document.querySelector('[data-i18n="projects.title"]').textContent = t.projects.title;
+    document.querySelector('[data-i18n="projects.subtitle"]').textContent = t.projects.subtitle;
+    document.querySelector('[data-i18n="projects.project1.title"]').textContent = t.projects.project1.title;
+    document.querySelector('[data-i18n="projects.project1.description"]').textContent = t.projects.project1.description;
+    document.querySelector('[data-i18n="projects.project2.title"]').textContent = t.projects.project2.title;
+    document.querySelector('[data-i18n="projects.project2.description"]').textContent = t.projects.project2.description;
+    document.querySelector('[data-i18n="projects.project3.title"]').textContent = t.projects.project3.title;
+    document.querySelector('[data-i18n="projects.project3.description"]').textContent = t.projects.project3.description;
+    
+    // Contact Section
+    document.querySelector('[data-i18n="contact.title"]').textContent = t.contact.title;
+    document.querySelector('[data-i18n="contact.description"]').textContent = t.contact.description;
+    document.querySelector('[data-i18n="contact.github"]').textContent = t.contact.github;
+    
+    // Footer
+    document.querySelector('[data-i18n="footer.copyright"]').textContent = t.footer.copyright;
+    document.querySelector('[data-i18n="footer.tagline"]').textContent = t.footer.tagline;
+    
+    // Aria labels
+    const themeToggle = document.querySelector('.theme-toggle');
+    if (themeToggle) {
+        themeToggle.setAttribute('aria-label', t.aria.themeToggle);
+        themeToggle.setAttribute('title', t.aria.themeToggle);
+    }
+    
+    const menuToggle = document.querySelector('.mobile-menu-toggle');
+    if (menuToggle) {
+        menuToggle.setAttribute('aria-label', t.aria.menuToggle);
+    }
+    
+    const skipLink = document.querySelector('.skip-link');
+    if (skipLink) {
+        skipLink.textContent = t.aria.skipToContent;
+    }
+}
+
+// ==========================================
 // Particle Background Animation
 // ==========================================
 function initParticles() {
@@ -128,9 +251,10 @@ function initThemeToggle() {
 // Mobile Menu Toggle
 // ==========================================
 document.addEventListener('DOMContentLoaded', function() {
-    // Initialize particles and theme
+    // Initialize particles, theme, and language
     initParticles();
     initThemeToggle();
+    initLanguageSelector();
     const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
     const navMenu = document.querySelector('.nav-menu');
     const navLinks = document.querySelectorAll('.nav-link');
