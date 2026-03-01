@@ -8,7 +8,7 @@ import {
   SlideFade,
   Image,
 } from '@chakra-ui/react'
-import { FaEnvelope, FaGithub, FaLinkedin } from 'react-icons/fa'
+import { FaEnvelope, FaGithub, FaLinkedin, FaDownload } from 'react-icons/fa'
 import useMediaQuery from '../hook/useMediaQuery'
 import ReactGA from 'react-ga4'
 
@@ -168,6 +168,22 @@ export default function Introduction({ introduction }) {
               size={isLargerThan800 ? 'md' : 'sm'}
             >
               Email
+            </Button>
+          </Link>
+          <Link href="/resumetest1.pdf" isExternal download>
+            <Button
+              pos="static"
+              color="white"
+              bg="black"
+              border="1px solid"
+              borderColor="borderColor"
+              _hover={{ bg: '#111' }}
+              transition="0.3s"
+              leftIcon={<FaDownload fill="#3CCF91" />}
+              onClick={() => handleClick('introduction_download_cv')}
+              size={isLargerThan800 ? 'md' : 'sm'}
+            >
+              Download CV
             </Button>
           </Link>
         </Stack>
