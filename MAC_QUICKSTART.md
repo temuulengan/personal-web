@@ -4,6 +4,65 @@ This guide is specifically for **macOS users** to view and deploy your portfolio
 
 ## ⚡ View It NOW on Your Mac (Step-by-Step)
 
+### Step 0: Download the Repository from GitHub (First Time Only)
+
+**If you don't have the repository on your Mac yet**, you need to download it first!
+
+#### Method A: Download as ZIP (Easiest - No Git Required)
+
+1. **Go to GitHub** in your browser:
+   - Visit: https://github.com/temuulengan/personal-web
+
+2. **Click the green "Code" button**
+
+3. **Click "Download ZIP"**
+
+4. **Find the downloaded file**:
+   - It's usually in your **Downloads** folder
+   - File name: `personal-web-copilot-polish-portfolio-website-code.zip`
+
+5. **Double-click the ZIP file** to unzip it
+
+6. **Move the folder** somewhere convenient (Desktop, Documents, etc.)
+
+7. **Now continue to Step 1 below!**
+
+#### Method B: Clone with Git (Recommended if you have Git)
+
+**Check if you have Git installed:**
+```bash
+git --version
+```
+
+If you see a version number, you have Git! If not, install it:
+
+**Installing Git on Mac:**
+```bash
+# Option 1: Using Homebrew (if you have it)
+brew install git
+
+# Option 2: Download from https://git-scm.com/download/mac
+
+# Option 3: Xcode Command Line Tools (Mac will prompt you)
+git --version
+# Click "Install" when prompted
+```
+
+**Clone the repository:**
+```bash
+# Navigate to where you want to save it (e.g., Desktop)
+cd ~/Desktop
+
+# Clone the repository
+git clone https://github.com/temuulengan/personal-web.git
+
+# You should see: "Cloning into 'personal-web'..."
+```
+
+✅ **Success!** The repository is now on your Mac in the `personal-web` folder!
+
+---
+
 ### Step 1: Open Terminal on Mac
 
 Choose ONE of these methods to open Terminal:
@@ -31,23 +90,41 @@ In Terminal, type this command to go to your project directory:
 cd personal-web
 ```
 
-💡 **Tip**: If you get "No such file or directory", you need to navigate to where you cloned/downloaded the project. Common locations:
+💡 **Common locations after downloading/cloning:**
 
 ```bash
-# If in your home directory:
-cd ~/personal-web
+# If you downloaded ZIP and it's in Downloads:
+cd ~/Downloads/personal-web-copilot-polish-portfolio-website-code
 
-# If in Downloads folder:
-cd ~/Downloads/personal-web
+# If you cloned to Desktop:
+cd ~/Desktop/personal-web
 
-# If in Documents folder:
+# If you moved it to Documents:
 cd ~/Documents/personal-web
 
-# If in Desktop folder:
-cd ~/Desktop/personal-web
+# If you moved it to your home directory:
+cd ~/personal-web
 ```
 
-🔍 **Not sure where it is?** Use Finder to locate the `personal-web` folder, then drag and drop the folder onto the Terminal window to auto-fill the path!
+🔍 **Not sure where it is?** Use Finder to locate the `personal-web` folder (or `personal-web-copilot-polish-portfolio-website-code` if you downloaded ZIP), then drag and drop the folder onto the Terminal window to auto-fill the path!
+
+**Example of drag-and-drop:**
+1. Open Finder
+2. Find your `personal-web` folder
+3. Type `cd ` in Terminal (with a space after cd)
+4. Drag the folder from Finder onto Terminal
+5. Press Enter
+
+✅ **Verify you're in the right place:**
+```bash
+# Check your current location
+pwd
+
+# List files - you should see index.html
+ls
+```
+
+You should see files like: `index.html`, `styles.css`, `script.js`, etc.
 
 ### Step 3: Check if Python 3 is Installed
 

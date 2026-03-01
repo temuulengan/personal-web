@@ -4,6 +4,39 @@
 
 ---
 
+## 📥 Step 0: Download the Repository (First Time Only)
+
+**If the repository is only on GitHub and not on your computer yet**, you need to download it first!
+
+### Option A: Clone with Git (Recommended)
+
+```bash
+# Check if you have git
+git --version
+
+# If not, install git first:
+# Mac: brew install git
+# Windows: download from https://git-scm.com/
+# Linux: sudo apt install git
+
+# Clone the repository
+git clone https://github.com/temuulengan/personal-web.git
+
+# Navigate into it
+cd personal-web
+```
+
+### Option B: Download as ZIP (No Git Required)
+
+1. Go to: https://github.com/temuulengan/personal-web
+2. Click the green **"Code"** button
+3. Click **"Download ZIP"**
+4. Unzip the file (usually in Downloads folder)
+5. Move the folder somewhere convenient (Desktop, Documents, etc.)
+6. Continue to Step 1 below
+
+---
+
 ## ⚡ View It RIGHT NOW (3 Simple Steps)
 
 ### Step 1: Open Terminal

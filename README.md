@@ -4,7 +4,19 @@ A minimal and stylish portfolio website for a Computer Science graduate looking 
 
 ## 🚀 Quick Start - View Your Portfolio NOW!
 
-### See it locally in 30 seconds:
+### First: Download the repository to your computer
+```bash
+# If you have git installed:
+git clone https://github.com/temuulengan/personal-web.git
+cd personal-web
+```
+
+**OR** download as ZIP from GitHub:
+1. Go to https://github.com/temuulengan/personal-web
+2. Click green "Code" button → "Download ZIP"
+3. Unzip and navigate to the folder
+
+### Then: See it locally in 30 seconds
 ```bash
 cd personal-web
 python3 -m http.server 8080
