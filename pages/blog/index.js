@@ -18,16 +18,16 @@ export default function Index({ posts }) {
   return (
     <Container>
       <Head>
-        <title>Blog - Your Name</title>
-        <meta content="Blog - Your Name" name="title" />
+        <title>Blog - Temuulen Gan</title>
+        <meta content="Blog - Temuulen Gan" name="title" />
         <meta
           content="Writings on programming, tutorials, and my experiences."
           name="description"
         />
 
         <meta content="website" property="og:type" />
-        <meta content="https://yourdomain.com/blog" property="og:url" />
-        <meta content="Blog - Your Name" property="og:title" />
+        <meta content="https://temuulengan.github.io/personal-web/blog" property="og:url" />
+        <meta content="Blog - Temuulen Gan" property="og:title" />
         <meta
           content="Writings on programming, tutorials, and my experiences."
           property="og:description"
@@ -38,8 +38,8 @@ export default function Index({ posts }) {
         />
 
         <meta content="summary_large_image" property="twitter:card" />
-        <meta content="https://yourdomain.com/" property="twitter:url" />
-        <meta content="Blog - Your Name" property="twitter:title" />
+        <meta content="https://temuulengan.github.io/personal-web/" property="twitter:url" />
+        <meta content="Blog - Temuulen Gan" property="twitter:title" />
         <meta
           content="Writings on programming, tutorials, and my experiences."
           property="twitter:description"
@@ -139,12 +139,12 @@ export default function Index({ posts }) {
 
 export async function getStaticProps() {
   const blog = new GithubBlog({
-    repo: 'yourusername/your-repo',
+    repo: 'temuulengan/personal-web',
     token: process.env.GITHUB_TOKEN,
   })
   const posts = await blog.getPosts({
     query: {
-      author: 'yourusername',
+      author: 'temuulengan',
       type: 'post',
       state: 'published',
     },

@@ -70,7 +70,7 @@ export default function AboutMe() {
               fontSize={{ base: '14px', md: '16px' }}
               whiteSpace="pre-line"
             >
-              Hey! I'm [Your Name], I've been passionate about technology and building things since an early age.
+              Hey! I'm Temuulen Gan, I've been passionate about technology and building things since an early age.
               <br />
               <br /> I love creating innovative solutions using modern web technologies. 
               I specialize in <MoreInfo
@@ -109,7 +109,7 @@ export default function AboutMe() {
                 h={{ base: '300px', lg: '350px' }}
                 objectFit="cover"
                 borderRadius="50%"
-                alt="Your Name"
+                alt="Temuulen Gan"
                 src="https://via.placeholder.com/350"
               />
             </Box>

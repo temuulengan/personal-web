@@ -28,7 +28,7 @@ const Container = ({ enableTransition, children }) => {
         </Flex>
         <Stack alignItems="center" mt={10} mb={5}>
           <Text fontSize="sm" textAlign="center">
-            Designed and Developed by Your Name.
+            Designed and Developed by Temuulen Gan.
             <br />
             Built with{' '}
             <chakra.span color="button1" fontWeight="semibold">

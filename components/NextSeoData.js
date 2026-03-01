@@ -10,7 +10,7 @@ const NextSeoData = ({ slug, metadata, publishedDate }) => {
           { property: 'twitter:card', content: 'summary_large_image' },
           {
             property: 'twitter:url',
-            content: `https://yourdomain.com/blog/${slug}`,
+            content: `https://temuulengan.github.io/personal-web/blog/${slug}`,
           },
           { property: 'twitter:title', content: metadata.title },
           {
@@ -19,16 +19,16 @@ const NextSeoData = ({ slug, metadata, publishedDate }) => {
           },
           { property: 'twitter:image', content: metadata.frontmatter.image },
         ]}
-        canonical={`https://yourdomain.com/blog/${slug}`}
+        canonical={`https://temuulengan.github.io/personal-web/blog/${slug}`}
         description={metadata.frontmatter.summary}
         openGraph={{
-          url: `https://yourdomain.com/blog/${slug}`,
-          site_name: 'Your Name',
+          url: `https://temuulengan.github.io/personal-web/blog/${slug}`,
+          site_name: 'Temuulen Gan',
           title: metadata.title,
           description: metadata.frontmatter.summary,
           type: 'article',
           article: {
-            authors: ['Your Name'],
+            authors: ['Temuulen Gan'],
             publishedTime: publishedDate,
             modifiedTime: publishedDate,
             tags: ['Programming', 'Web Development', 'Software Engineering'],
@@ -43,15 +43,15 @@ const NextSeoData = ({ slug, metadata, publishedDate }) => {
         title={metadata.title}
       />
       <ArticleJsonLd
-        authorName="Your Name"
+        authorName="Temuulen Gan"
         dateModified={publishedDate}
         datePublished={publishedDate}
         description={metadata.frontmatter.summary}
         images={[metadata.frontmatter.image]}
         publisherLogo="https://via.placeholder.com/150"
-        publisherName="Your Name"
+        publisherName="Temuulen Gan"
         title={metadata.title}
-        url={`https://yourdomain.com/blog/${slug}`}
+        url={`https://temuulengan.github.io/personal-web/blog/${slug}`}
       />
     </>
   )

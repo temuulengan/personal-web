@@ -18,21 +18,21 @@ export default function Projects({ projects }) {
     <>
       <Container>
         <Head>
-          <title>Your Name - Projects</title>
-          <meta content="Your Name - Projects" name="title" />
+          <title>Temuulen Gan - Projects</title>
+          <meta content="Temuulen Gan - Projects" name="title" />
           <meta
-            content="Portfolio of projects by Your Name."
+            content="Portfolio of projects by Temuulen Gan."
             name="description"
           />
 
           <meta content="website" property="og:type" />
-          <meta content="https://yourdomain.com/projects" property="og:url" />
+          <meta content="https://temuulengan.github.io/personal-web/projects" property="og:url" />
           <meta
-            content="Your Name - Projects"
+            content="Temuulen Gan - Projects"
             property="og:title"
           />
           <meta
-            content="Portfolio of projects by Your Name."
+            content="Portfolio of projects by Temuulen Gan."
             property="og:description"
           />
           <meta
@@ -42,15 +42,15 @@ export default function Projects({ projects }) {
 
           <meta content="summary_large_image" property="twitter:card" />
           <meta
-            content="https://yourdomain.com/projects"
+            content="https://temuulengan.github.io/personal-web/projects"
             property="twitter:url"
           />
           <meta
-            content="Your Name - Projects"
+            content="Temuulen Gan - Projects"
             property="twitter:title"
           />
           <meta
-            content="Portfolio of projects by Your Name."
+            content="Portfolio of projects by Temuulen Gan."
             property="twitter:description"
           />
           <meta
@@ -111,7 +111,7 @@ export default function Projects({ projects }) {
 
 export async function getStaticProps() {
   const blog = new GithubBlog({
-    repo: 'yourusername/your-repo',
+    repo: 'temuulengan/personal-web',
     token: process.env.GITHUB_TOKEN,
   })
   const projects = await blog.getPosts({

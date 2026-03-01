@@ -14,18 +14,18 @@ export default function Index({ introduction, projects, articles, contactMe }) {
     <>
       <Container enableTransition={true}>
         <Head>
-          <title>Your Name - Software Engineer</title>
-          <meta content="Your Name - Software Engineer" name="title" />
-          <meta content="yourname, portfolio" name="keywords" />
+          <title>Temuulen Gan - Software Engineer</title>
+          <meta content="Temuulen Gan - Software Engineer" name="title" />
+          <meta content="temuulengan, temuulengan website, portfolio" name="keywords" />
           <meta
             content="Software Engineer and developer passionate about building amazing web applications."
             name="description"
           />
 
           <meta content="website" property="og:type" />
-          <meta content="https://yourdomain.com" property="og:url" />
+          <meta content="https://temuulengan.github.io/personal-web" property="og:url" />
           <meta
-            content="Your Name - Software Engineer"
+            content="Temuulen Gan - Software Engineer"
             property="og:title"
           />
           <meta
@@ -38,9 +38,9 @@ export default function Index({ introduction, projects, articles, contactMe }) {
           />
 
           <meta content="summary_large_image" property="twitter:card" />
-          <meta content="https://yourdomain.com/" property="twitter:url" />
+          <meta content="https://temuulengan.github.io/personal-web/" property="twitter:url" />
           <meta
-            content="Your Name - Software Engineer"
+            content="Temuulen Gan - Software Engineer"
             property="twitter:title"
           />
           <meta
@@ -84,12 +84,12 @@ export async function getStaticProps() {
   })
 
   const blog = new GithubBlog({
-    repo: 'yourusername/your-repo',
+    repo: 'temuulengan/personal-web',
     token: process.env.GITHUB_TOKEN,
   })
   let data2 = await blog.getPosts({
     query: {
-      author: 'yourusername',
+      author: 'temuulengan',
       type: 'post',
       state: 'published',
     },
