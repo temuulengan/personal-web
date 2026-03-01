@@ -46,7 +46,7 @@ python3 -m http.server 8080
 
 **What it should look like when working:**
 
-![Working Portfolio](https://github.com/user-attachments/assets/5d932b0f-7d61-4907-a580-a0c36a6614ca)
+![Screenshot of portfolio website showing animated gradient background with floating purple and blue orbs, modern navigation bar with theme toggle, hero section with name and title, and styled sections for About Me, Technical Skills with progress bars, Featured Projects cards, and Contact information](https://github.com/user-attachments/assets/5d932b0f-7d61-4907-a580-a0c36a6614ca)
 
 ### Then: See it locally in 30 seconds
 ```bash

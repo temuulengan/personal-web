@@ -239,7 +239,7 @@ Modern websites need to be served through HTTP (like `http://localhost:8080`) fo
 
 When served correctly, your portfolio looks like this:
 
-![Working Portfolio Design](https://github.com/user-attachments/assets/5d932b0f-7d61-4907-a580-a0c36a6614ca)
+![Screenshot of portfolio website showing animated gradient background with floating purple and blue orbs, modern navigation bar with TG logo and theme toggle, hero section with greeting and call-to-action buttons, About Me section with education cards, Technical Skills with progress bars, Featured Projects displayed as gradient cards, and Contact section](https://github.com/user-attachments/assets/5d932b0f-7d61-4907-a580-a0c36a6614ca)
 
 ✨ **Features when working properly:**
 - 🎨 Animated gradient background with floating purple/blue orbs

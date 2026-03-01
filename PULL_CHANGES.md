@@ -421,7 +421,7 @@ http://localhost:8080
 
 When served properly through HTTP, your portfolio looks like this:
 
-![Working Portfolio Design](https://github.com/user-attachments/assets/5d932b0f-7d61-4907-a580-a0c36a6614ca)
+![Screenshot of portfolio website with full styling including animated gradient background with floating purple and blue orbs, modern sticky navigation bar, hero section with name and professional title, styled call-to-action buttons, About Me section with icon cards, Technical Skills section displaying language proficiency bars, Featured Projects shown as cards with gradient backgrounds, and Contact section with social links](https://github.com/user-attachments/assets/5d932b0f-7d61-4907-a580-a0c36a6614ca)
 
 ✨ **Features when working correctly:**
 - 🎨 Animated gradient background with floating purple/blue orbs

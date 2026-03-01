@@ -185,7 +185,7 @@ npx http-server -p 8080
 
 When served properly, your portfolio looks like this with full design:
 
-![Working Portfolio Design](https://github.com/user-attachments/assets/5d932b0f-7d61-4907-a580-a0c36a6614ca)
+![Screenshot of portfolio website with animated gradient background featuring floating purple and blue orbs, modern navigation bar at top, hero section displaying name and tagline, styled buttons, About Me section with education cards, Technical Skills section with colored progress bars, Featured Projects with gradient cards, and Contact section at bottom](https://github.com/user-attachments/assets/5d932b0f-7d61-4907-a580-a0c36a6614ca)
 
 ✨ Features you should see:
 - Animated gradient background with floating orbs
