@@ -6,7 +6,9 @@ import Navbar from './Navbar'
 const Container = ({ enableTransition, children }) => {
   const [mounted, setMounted] = useState(false)
   useEffect(() => {
-    ReactGA.initialize(process.env.NEXT_PUBLIC_UA_CODE)
+    if (process.env.NEXT_PUBLIC_UA_CODE) {
+      ReactGA.initialize(process.env.NEXT_PUBLIC_UA_CODE)
+    }
   }, [])
 
   useEffect(() => {
