@@ -124,7 +124,7 @@ export default function Introduction({ introduction }) {
         in={true}
       >
         <Stack isInline spacing={4}>
-          <Link href="https://github.com/yourusername" isExternal>
+          <Link href="https://github.com/temuulengan" isExternal>
             <Button
               pos="static"
               color="white"
@@ -135,7 +135,7 @@ export default function Introduction({ introduction }) {
               Github
             </Button>
           </Link>
-          <Link href="https://linkedin.com/in/yourusername" isExternal>
+          <Link href="https://linkedin.com/in/temuulengan" isExternal>
             <Button
               pos="static"
               color="white"
@@ -146,7 +146,7 @@ export default function Introduction({ introduction }) {
               LinkedIn
             </Button>
           </Link>
-          <Link href="mailto:your.email@example.com" isExternal>
+          <Link href="mailto:temuulengan@example.com" isExternal>
             <Button
               pos="static"
               color="white"
