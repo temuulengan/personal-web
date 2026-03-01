@@ -125,11 +125,8 @@ If you're unsure which option to choose:
    git pull origin copilot/update-personal-web-with-info
    ```
 
-3. **If you encounter merge conflicts**, Git will tell you which files have conflicts. Edit those files to resolve conflicts, then:
-   ```bash
-   git add .
-   git commit -m "Merge remote changes"
-   ```
+3. **If you encounter merge conflicts**, Git will tell you which files have conflicts. See the detailed guide:
+   📖 **[RESOLVE_MERGE_CONFLICTS.md](./RESOLVE_MERGE_CONFLICTS.md)** - Complete guide for resolving merge conflicts
 
 ## Prevention for Future
 
