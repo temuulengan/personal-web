@@ -89,7 +89,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // Navbar Background on Scroll
     // ==========================================
     const navbar = document.querySelector('.navbar');
-    let lastScroll = 0;
     
     window.addEventListener('scroll', () => {
         const currentScroll = window.pageYOffset;
@@ -99,8 +98,6 @@ document.addEventListener('DOMContentLoaded', function() {
         } else {
             navbar.style.boxShadow = '0 1px 2px 0 rgba(0, 0, 0, 0.05)';
         }
-        
-        lastScroll = currentScroll;
     });
     
     // ==========================================
@@ -227,25 +224,13 @@ document.addEventListener('DOMContentLoaded', function() {
     // ==========================================
     const currentYear = new Date().getFullYear();
     const yearElement = document.querySelector('.footer p');
-    if (yearElement && yearElement.textContent.includes('2026')) {
-        yearElement.textContent = yearElement.textContent.replace('2026', currentYear);
+    if (yearElement) {
+        const yearMatch = yearElement.textContent.match(/© (\d{4})/);
+        if (yearMatch) {
+            yearElement.textContent = yearElement.textContent.replace(yearMatch[1], currentYear);
+        }
     }
 });
-
-// ==========================================
-// Performance: Debounce Function
-// ==========================================
-function debounce(func, wait) {
-    let timeout;
-    return function executedFunction(...args) {
-        const later = () => {
-            clearTimeout(timeout);
-            func(...args);
-        };
-        clearTimeout(timeout);
-        timeout = setTimeout(later, wait);
-    };
-}
 
 // ==========================================
 // Accessibility: Skip to Content Link
