@@ -89,7 +89,7 @@ git checkout copilot/polish-portfolio-website-code
 
 ## 🆘 Troubleshooting
 
-### Problem 0: "zsh: no such file or directory" or "command not found"
+### Problem 1: "zsh: no such file or directory" or "command not found"
 
 **Error Message:**
 ```
@@ -148,7 +148,7 @@ git clone https://github.com/temuulengan/personal-web.git
 
 ---
 
-### Problem 1: "Not a git repository"
+### Problem 2: "Not a git repository"
 
 **Error Message:**
 ```
@@ -173,7 +173,7 @@ git checkout copilot/polish-portfolio-website-code
 
 ---
 
-### Problem 2: "Your local changes would be overwritten"
+### Problem 3: "Your local changes would be overwritten"
 
 **Error Message:**
 ```
@@ -203,7 +203,7 @@ git pull origin copilot/polish-portfolio-website-code
 
 ---
 
-### Problem 3: "Could not find branch"
+### Problem 4: "Could not find branch"
 
 **Error Message:**
 ```
@@ -223,7 +223,7 @@ git pull origin main
 
 ---
 
-### Problem 4: "Permission denied (publickey)"
+### Problem 5: "Permission denied (publickey)"
 
 **Error Message:**
 ```
@@ -240,7 +240,7 @@ git pull origin copilot/polish-portfolio-website-code
 
 ---
 
-### Problem 5: Merge Conflicts
+### Problem 6: Merge Conflicts
 
 **Error Message:**
 ```
