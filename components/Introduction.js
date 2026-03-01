@@ -128,6 +128,10 @@ export default function Introduction({ introduction }) {
             <Button
               pos="static"
               color="white"
+              bg="black"
+              border="1px solid"
+              borderColor="borderColor"
+              _hover={{ bg: '#111' }}
               leftIcon={<FaGithub color="#3CCF91" />}
               onClick={() => handleClick('introduction_github')}
               size={isLargerThan800 ? 'md' : 'sm'}
@@ -139,6 +143,10 @@ export default function Introduction({ introduction }) {
             <Button
               pos="static"
               color="white"
+              bg="black"
+              border="1px solid"
+              borderColor="borderColor"
+              _hover={{ bg: '#111' }}
               leftIcon={<FaLinkedin color="#3CCF91" />}
               onClick={() => handleClick('introduction_linkedin')}
               size={isLargerThan800 ? 'md' : 'sm'}
@@ -150,6 +158,10 @@ export default function Introduction({ introduction }) {
             <Button
               pos="static"
               color="white"
+              bg="black"
+              border="1px solid"
+              borderColor="borderColor"
+              _hover={{ bg: '#111' }}
               transition="0.3s"
               leftIcon={<FaEnvelope fill="#3CCF91" />}
               onClick={() => handleClick('introduction_email')}

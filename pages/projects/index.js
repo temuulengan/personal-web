@@ -110,6 +110,40 @@ export default function Projects({ projects }) {
 }
 
 export async function getStaticProps() {
+  // Real projects with placeholder images
+  const sampleProjects = [
+    {
+      title: 'PortfolioIQ - AI-Powered Financial Portfolio Analyzer',
+      frontmatter: {
+        summary: 'Mobile app analyzing stock/index portfolios with Yahoo Finance API integration for real-time market data and automated risk assessment. Full SDLC execution with 100% data ingestion accuracy.',
+        image: 'https://via.placeholder.com/800x400/000000/3CCF91?text=PortfolioIQ',
+        techStack: 'React Native, Python, Yahoo Finance API, Firebase',
+        slug: 'portfolioiq',
+        date: '2024-03-01',
+      },
+    },
+    {
+      title: 'AI Recipe Chat - Intelligent Cooking Assistant',
+      frontmatter: {
+        summary: 'Frontend Lead role delivering a personalized recipe recommendation engine with OpenAI-powered chat functionality. Agile team collaboration with rapid prototyping and seamless natural language conversation flows.',
+        image: 'https://via.placeholder.com/800x400/000000/3CCF91?text=AI+Recipe+Chat',
+        techStack: 'React, Next.js, OpenAI API, Node.js',
+        slug: 'ai-recipe-chat',
+        date: '2024-02-15',
+      },
+    },
+    {
+      title: 'FinGuard - Emotion-Driven Personal Financial Risk Database',
+      frontmatter: {
+        summary: 'Complex data architecture featuring schema normalization and behavioral pattern analysis. Advanced data modeling classifying financial risks based on emotional input with structured analytical reports.',
+        image: 'https://via.placeholder.com/800x400/000000/3CCF91?text=FinGuard',
+        techStack: 'MySQL, Python, Flask, SQL',
+        slug: 'finguard',
+        date: '2024-01-10',
+      },
+    },
+  ];
+
   try {
     const blog = new GithubBlog({
       repo: 'temuulengan/personal-web',
@@ -124,22 +158,28 @@ export async function getStaticProps() {
       pager: { limit: 100, offset: 0 },
     })
 
-    return {
-      props: {
-        projects: projects.edges
+    // Use GitHub projects if available, otherwise use sample projects
+    const projectsList = projects.edges && projects.edges.length > 0
+      ? projects.edges
           .sort(
             (a, b) =>
               Date.parse(b.post.frontmatter.date) -
               Date.parse(a.post.frontmatter.date),
           )
-          .map((e) => e.post),
+          .map((e) => e.post)
+      : sampleProjects;
+
+    return {
+      props: {
+        projects: projectsList,
       },
     }
   } catch (error) {
     console.error('Error fetching projects:', error)
+    // Return real projects on error
     return {
       props: {
-        projects: [],
+        projects: sampleProjects,
       },
     }
   }
