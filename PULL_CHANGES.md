@@ -291,9 +291,9 @@ cd ..
 # List all folders
 ls -la
 
-# You should see both:
-# - personal-web-main (the ZIP download - NOT a git repo)
-# - personal-web (might be a git repo)
+# You should see both folders listed:
+#   personal-web-main (the ZIP download - NOT a git repo)
+#   personal-web (might be a git repo)
 
 # Check if personal-web is a git repository
 cd personal-web
