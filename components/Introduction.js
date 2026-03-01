@@ -11,9 +11,11 @@ import {
 import { FaEnvelope, FaGithub, FaLinkedin, FaDownload } from 'react-icons/fa'
 import useMediaQuery from '../hook/useMediaQuery'
 import ReactGA from 'react-ga4'
+import { useLanguage } from '../contexts/LanguageContext'
 
 export default function Introduction({ introduction }) {
   const isLargerThan800 = useMediaQuery(800)
+  const { t } = useLanguage()
   const handleClick = (event) => {
     ReactGA.event({
       category: 'click',
@@ -51,7 +53,7 @@ export default function Introduction({ introduction }) {
             fontSize="display2"
             fontWeight="medium"
           >
-            Hey there!, I'm-
+            {t('intro.greeting')}
           </Text>
         </Box>
         <Heading
@@ -62,7 +64,7 @@ export default function Introduction({ introduction }) {
           lineHeight={'95%'}
           letterSpacing={{ sm: '-1.2px', md: '-1.8px' }}
         >
-          Temuulen Gan.
+          {t('intro.name')}
         </Heading>
       </SlideFade>
 
@@ -79,12 +81,9 @@ export default function Introduction({ introduction }) {
           whiteSpace="pre-wrap"
         >
           <Box as="span" color="displayColor">
-            Software Engineer.
+            {t('intro.title')}
           </Box>{' '}
-          A passionate developer{' '}
-          {isLargerThan800
-            ? 'with an\ninterest in building great products.'
-            : 'with an interest in building great products.'}
+          {t('intro.description')}
         </Heading>
       </SlideFade>
 
@@ -136,7 +135,7 @@ export default function Introduction({ introduction }) {
               onClick={() => handleClick('introduction_github')}
               size={isLargerThan800 ? 'md' : 'sm'}
             >
-              Github
+              {t('buttons.github')}
             </Button>
           </Link>
           <Link href="https://linkedin.com/in/temuulengan" isExternal>
@@ -151,7 +150,7 @@ export default function Introduction({ introduction }) {
               onClick={() => handleClick('introduction_linkedin')}
               size={isLargerThan800 ? 'md' : 'sm'}
             >
-              LinkedIn
+              {t('buttons.linkedin')}
             </Button>
           </Link>
           <Link href="mailto:temuulengan@example.com" isExternal>
@@ -167,7 +166,7 @@ export default function Introduction({ introduction }) {
               onClick={() => handleClick('introduction_email')}
               size={isLargerThan800 ? 'md' : 'sm'}
             >
-              Email
+              {t('buttons.email')}
             </Button>
           </Link>
           <Link download href="/resume.pdf" isExternal>
@@ -183,7 +182,7 @@ export default function Introduction({ introduction }) {
               onClick={() => handleClick('introduction_download_cv')}
               size={isLargerThan800 ? 'md' : 'sm'}
             >
-              Download CV
+              {t('buttons.downloadCV')}
             </Button>
           </Link>
         </Stack>

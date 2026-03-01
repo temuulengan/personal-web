@@ -19,11 +19,14 @@ import NextLink from 'next/link'
 import styled from '@emotion/styled'
 import useMediaQuery from '../hook/useMediaQuery'
 import { AiOutlineMenu } from 'react-icons/ai'
+import { useLanguage } from '../contexts/LanguageContext'
+import LanguageSwitcher from './LanguageSwitcher'
 
 export default function Navbar({ enableTransition }) {
   const isLargerThan768 = useMediaQuery(768)
   const { isOpen, onOpen, onClose } = useDisclosure()
   const firstField = useRef()
+  const { t } = useLanguage()
   const Bracket = styled.span`
     color: #8f9094;
     font-weight: 600;
@@ -47,19 +50,20 @@ export default function Navbar({ enableTransition }) {
             <Stack spacing="24px">
               <NextLink passHref href="/">
                 <Button as="a" fontSize="16px" variant="ghost">
-                  Home
+                  {t('nav.home')}
                 </Button>
               </NextLink>
               <NextLink passHref href="/projects">
                 <Button as="a" fontSize="16px" variant="ghost">
-                  Projects
+                  {t('nav.projects')}
                 </Button>
               </NextLink>
               <NextLink passHref href="/blog">
                 <Button as="a" fontSize="16px" variant="ghost">
-                  Blog
+                  {t('nav.blog')}
                 </Button>
               </NextLink>
+              <LanguageSwitcher size="sm" />
             </Stack>
           </DrawerBody>
         </DrawerContent>
@@ -106,19 +110,20 @@ export default function Navbar({ enableTransition }) {
             <Box mr={7} color="displayColor">
               <NextLink passHref href="/">
                 <Button as="a" p="4" fontSize="16px" variant="ghost">
-                  Home
+                  {t('nav.home')}
                 </Button>
               </NextLink>
               <NextLink passHref href="/projects">
                 <Button as="a" p="4" fontSize="16px" variant="ghost">
-                  Projects
+                  {t('nav.projects')}
                 </Button>
               </NextLink>
               <NextLink passHref href="/blog">
                 <Button as="a" p="4" fontSize="16px" variant="ghost">
-                  Blog
+                  {t('nav.blog')}
                 </Button>
-              </NextLink>{' '}
+              </NextLink>
+              <LanguageSwitcher />
             </Box>
           ) : (
             <Icon as={AiOutlineMenu} w={7} h={7} onClick={onOpen} />

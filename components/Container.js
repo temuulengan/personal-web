@@ -2,9 +2,11 @@ import { Box, Flex, Stack, Text, chakra } from '@chakra-ui/react'
 import { useEffect, useState } from 'react'
 import ReactGA from 'react-ga4'
 import Navbar from './Navbar'
+import { useLanguage } from '../contexts/LanguageContext'
 
 const Container = ({ enableTransition, children }) => {
   const [mounted, setMounted] = useState(false)
+  const { t } = useLanguage()
   useEffect(() => {
     if (process.env.NEXT_PUBLIC_UA_CODE) {
       ReactGA.initialize(process.env.NEXT_PUBLIC_UA_CODE)
@@ -30,17 +32,17 @@ const Container = ({ enableTransition, children }) => {
         </Flex>
         <Stack alignItems="center" mt={10} mb={5}>
           <Text fontSize="sm" textAlign="center">
-            Designed and Developed by Temuulen Gan.
+            {t('footer.designedBy')}
             <br />
-            Built with{' '}
+            {t('footer.builtWith')}{' '}
             <chakra.span color="button1" fontWeight="semibold">
               Next.js
             </chakra.span>{' '}
-            &{' '}
+            {t('footer.and')}{' '}
             <chakra.span color="button1" fontWeight="semibold">
               Chakra UI
             </chakra.span>
-            . Hosted on{' '}
+            . {t('footer.hostedOn')}{' '}
             <chakra.span color="button1" fontWeight="semibold">
               Vercel
             </chakra.span>

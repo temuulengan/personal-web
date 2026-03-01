@@ -2,6 +2,7 @@ import { ChakraProvider } from '@chakra-ui/react'
 import customTheme from '../styles/theme'
 import { Global, css } from '@emotion/react'
 import { prismDarkTheme } from '../styles/prism'
+import { LanguageProvider } from '../contexts/LanguageContext'
 const GlobalStyle = ({ children }) => {
   return (
     <>
@@ -46,9 +47,11 @@ const GlobalStyle = ({ children }) => {
 function MyApp({ Component, pageProps }) {
   return (
     <ChakraProvider resetCSS theme={customTheme}>
-      <GlobalStyle>
-        <Component {...pageProps} />
-      </GlobalStyle>
+      <LanguageProvider>
+        <GlobalStyle>
+          <Component {...pageProps} />
+        </GlobalStyle>
+      </LanguageProvider>
     </ChakraProvider>
   )
 }

@@ -1,0 +1,44 @@
+{
+  "nav": {
+    "home": "Home",
+    "projects": "Projects",
+    "blog": "Blog"
+  },
+  "intro": {
+    "greeting": "Hey there!, I'm-",
+    "name": "Temuulen Gan.",
+    "title": "Software Engineer.",
+    "description": "A passionate developer with an interest in building great products."
+  },
+  "buttons": {
+    "github": "Github",
+    "linkedin": "LinkedIn",
+    "email": "Email",
+    "downloadCV": "Download CV"
+  },
+  "about": {
+    "title": "About Me",
+    "description": "I'm a software engineer passionate about building great web applications and learning new technologies."
+  },
+  "projects": {
+    "title": "Featured Projects",
+    "viewAll": "View All Projects",
+    "viewProject": "View Project"
+  },
+  "blog": {
+    "title": "Latest Articles",
+    "readMore": "Read More",
+    "viewAll": "View All Articles"
+  },
+  "contact": {
+    "title": "Get In Touch",
+    "description": "Feel free to reach out to me for any opportunities or just to say hi!",
+    "send": "Send Message"
+  },
+  "footer": {
+    "designedBy": "Designed and Developed by Temuulen Gan.",
+    "builtWith": "Built with",
+    "and": "&",
+    "hostedOn": "Hosted on"
+  }
+}
