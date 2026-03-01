@@ -6,17 +6,20 @@ A minimal and stylish portfolio website for a Computer Science graduate looking 
 
 ### 🔄 Already Have the Repository? Get Latest Changes!
 
-If you already have the portfolio on your computer and want to get the **latest fancy design updates**:
+If you already have the portfolio on your computer and want to get the **latest updates**:
 
 ```bash
 cd personal-web
-git pull origin copilot/polish-portfolio-website-code
+git pull origin copilot/add-multi-language-support
 # Note: Use branch name, NOT the GitHub URL!
 ```
 
-⚠️ **Common Mistake:** Don't use `git pull origin https://github.com/...` - that's wrong syntax!
+⚠️ **Having Git Issues?** Check out our comprehensive help guides:
 
-📖 **See full instructions**: [PULL_CHANGES.md](PULL_CHANGES.md)
+- 🎯 **[GIT_HELP_INDEX.md](GIT_HELP_INDEX.md)** - Start here for quick issue resolution
+- ⚡ **[FIX_GIT_DIVERGENCE.md](FIX_GIT_DIVERGENCE.md)** - "Diverging branches" error? 3-step fix
+- 🔧 **[RESOLVE_REBASE_ISSUES.md](RESOLVE_REBASE_ISSUES.md)** - Stuck in a rebase? Complete guide
+- 📥 **[PULL_CHANGES.md](PULL_CHANGES.md)** - Comprehensive pulling guide
 
 ---
 
