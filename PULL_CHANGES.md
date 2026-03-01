@@ -34,6 +34,16 @@ cd personal-web
 git pull origin copilot/polish-portfolio-website-code
 ```
 
+⚠️ **IMPORTANT:** Use the **branch name**, NOT the GitHub URL!
+
+```bash
+# ❌ WRONG - Don't use the URL
+git pull origin https://github.com/temuulengan/personal-web.git
+
+# ✅ RIGHT - Use the branch name
+git pull origin copilot/polish-portfolio-website-code
+```
+
 **That's it!** 🎉 The latest changes are now on your computer!
 
 ---
@@ -144,7 +154,54 @@ git checkout copilot/polish-portfolio-website-code
 
 ## 🆘 Troubleshooting
 
-### Problem 1: "zsh: no such file or directory" or "command not found"
+### Problem 1: "fatal: 'https://github.com/...' does not appear to be a git repository"
+
+**Error Message:**
+```
+fatal: 'https://github.com/temuulengan/personal-web.git' does not appear to be a git repository
+fatal: Could not read from remote repository.
+```
+
+**What You Did Wrong:** You used the full GitHub URL in `git pull` command!
+
+```bash
+# ❌ WRONG - Don't use the full URL with git pull
+git pull origin https://github.com/temuulengan/personal-web.git
+
+# ✅ RIGHT - Use the branch name instead
+git pull origin copilot/polish-portfolio-website-code
+# OR
+git pull origin main
+```
+
+**Why This Happens:**
+- `git clone` needs the **full URL** (when downloading for the first time)
+- `git pull` needs the **branch name** (when updating existing repo)
+
+**Quick Reference:**
+
+| Command | When to Use | Syntax |
+|---------|-------------|--------|
+| `git clone <URL>` | First time downloading | `git clone https://github.com/temuulengan/personal-web.git` |
+| `git pull origin <branch>` | Updating existing repo | `git pull origin main` |
+
+**Common Confusion:**
+```bash
+# FIRST TIME - Use git clone with URL
+git clone https://github.com/temuulengan/personal-web.git
+cd personal-web
+
+# LATER UPDATES - Use git pull with branch name
+git pull origin copilot/polish-portfolio-website-code
+```
+
+💡 **Remember:** 
+- Clone = Full URL = First time only
+- Pull = Branch name = Updates to existing repo
+
+---
+
+### Problem 2: "zsh: no such file or directory" or "command not found"
 
 **Error Message:**
 ```
@@ -203,7 +260,7 @@ git clone https://github.com/temuulengan/personal-web.git
 
 ---
 
-### Problem 2: "Not a git repository"
+### Problem 3: "Not a git repository"
 
 **Error Message:**
 ```
@@ -228,7 +285,7 @@ git checkout copilot/polish-portfolio-website-code
 
 ---
 
-### Problem 3: "Your local changes would be overwritten"
+### Problem 4: "Your local changes would be overwritten"
 
 **Error Message:**
 ```
@@ -258,7 +315,7 @@ git pull origin copilot/polish-portfolio-website-code
 
 ---
 
-### Problem 4: "Could not find branch"
+### Problem 5: "Could not find branch"
 
 **Error Message:**
 ```
@@ -278,7 +335,7 @@ git pull origin main
 
 ---
 
-### Problem 5: "Permission denied (publickey)"
+### Problem 6: "Permission denied (publickey)"
 
 **Error Message:**
 ```
@@ -295,7 +352,7 @@ git pull origin copilot/polish-portfolio-website-code
 
 ---
 
-### Problem 6: Merge Conflicts
+### Problem 7: Merge Conflicts
 
 **Error Message:**
 ```
@@ -362,7 +419,7 @@ git checkout copilot/polish-portfolio-website-code
 
 ---
 
-### Problem 7: Website Shows No Design / Looks Plain
+### Problem 8: Website Shows No Design / Looks Plain
 
 **Symptoms:**
 - Website opens but looks like plain text with no styling

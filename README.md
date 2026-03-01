@@ -11,7 +11,10 @@ If you already have the portfolio on your computer and want to get the **latest 
 ```bash
 cd personal-web
 git pull origin copilot/polish-portfolio-website-code
+# Note: Use branch name, NOT the GitHub URL!
 ```
+
+⚠️ **Common Mistake:** Don't use `git pull origin https://github.com/...` - that's wrong syntax!
 
 📖 **See full instructions**: [PULL_CHANGES.md](PULL_CHANGES.md)
 
