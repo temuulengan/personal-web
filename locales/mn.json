@@ -11,9 +11,9 @@
     "description": "Гайхалтай бүтээгдэхүүн бүтээх сонирхолтой хүсэл тэмүүлэлтэй хөгжүүлэгч."
   },
   "buttons": {
-    "github": "Гитхаб",
-    "linkedin": "Линкедин",
-    "email": "Имэйл",
+    "github": "Github",
+    "linkedin": "LinkedIn",
+    "email": "Email",
     "downloadCV": "Анкет Татах"
   },
   "about": {
@@ -37,8 +37,8 @@
   },
   "footer": {
     "designedBy": "Темүүлэнгийн Ган дизайн, хөгжүүлсэн.",
-    "builtWith": "Бүтээсэн",
+    "builtWith": "Built with",
     "and": "&",
-    "hostedOn": "Байршуулсан"
+    "hostedOn": "Hosted on"
   }
 }
