@@ -197,6 +197,64 @@ When you're done viewing:
 
 ## 🔧 Mac-Specific Troubleshooting
 
+### Website Shows No Design / Looks Plain ⚠️ COMMON ISSUE
+
+**Symptoms:**
+- You open the website but it looks like plain text
+- No colors, no styling, no animations
+- Just black text on white background
+- Looks "broken" or unfinished
+
+**What You Did Wrong:** You **double-clicked `index.html`** in Finder instead of using a local server!
+
+**Why This Happens:**
+When you double-click `index.html`, macOS opens it in your browser as:
+```
+file:///Users/yourname/Desktop/personal-web/index.html
+```
+
+Modern websites need to be served through HTTP (like `http://localhost:8080`) for CSS, fonts, and JavaScript to work properly!
+
+**✅ THE FIX - Use a Local Server:**
+
+1. **Open Terminal** (`⌘ + Space`, type "Terminal")
+
+2. **Navigate to your folder:**
+   ```bash
+   cd ~/Desktop/personal-web
+   # Or wherever you saved it
+   ```
+
+3. **Start the server:**
+   ```bash
+   python3 -m http.server 8080
+   ```
+
+4. **Open in browser:**
+   ```bash
+   open http://localhost:8080
+   ```
+
+**What You Should See:**
+
+When served correctly, your portfolio looks like this:
+
+![Working Portfolio Design](https://github.com/user-attachments/assets/5d932b0f-7d61-4907-a580-a0c36a6614ca)
+
+✨ **Features when working properly:**
+- 🎨 Animated gradient background with floating purple/blue orbs
+- 🎯 Modern navigation bar with smooth transitions
+- 💎 Styled buttons and cards
+- 🌈 Professional blue/purple color scheme
+- ✨ Smooth animations when scrolling
+- 📱 Responsive design that works on all devices
+
+**Remember on Mac:** 
+- ❌ DON'T double-click `index.html` in Finder
+- ✅ DO use Terminal with `python3 -m http.server 8080`
+
+---
+
 ### "Port already in use" Error
 
 If port 8080 is busy, try a different port:

@@ -362,6 +362,91 @@ git checkout copilot/polish-portfolio-website-code
 
 ---
 
+### Problem 7: Website Shows No Design / Looks Plain
+
+**Symptoms:**
+- Website opens but looks like plain text with no styling
+- No colors, no background animations, no modern design
+- Just black text on white background
+- Looks "broken" or unfinished
+
+**Error:** You're opening `index.html` directly (double-clicking it) instead of using a local server!
+
+**What Happened:**
+When you double-click `index.html`, your browser opens it as:
+```
+file:///path/to/personal-web/index.html
+```
+
+Modern web features (CSS styles, Google Fonts, animations, scripts) require HTTP protocol to work properly. Opening files directly with `file://` protocol has security restrictions that prevent these features from loading.
+
+**✅ Solution: Use a Local Server**
+
+**Step 1: Open Terminal**
+- **Mac**: `⌘ + Space`, type "Terminal"
+- **Windows**: `Win + R`, type "cmd"
+- **Linux**: `Ctrl + Alt + T`
+
+**Step 2: Navigate to your folder**
+```bash
+cd personal-web
+# Or use full path like: cd ~/Desktop/personal-web
+```
+
+**Step 3: Start a local server**
+```bash
+# Python 3 (most common):
+python3 -m http.server 8080
+
+# Python 2 (older systems):
+python -m SimpleHTTPServer 8080
+
+# Node.js (if you have it):
+npx http-server -p 8080
+```
+
+**Step 4: Open in browser**
+```bash
+# Mac:
+open http://localhost:8080
+
+# Windows:
+start http://localhost:8080
+
+# Or manually type in browser:
+http://localhost:8080
+```
+
+**What You Should See:**
+
+When served properly through HTTP, your portfolio looks like this:
+
+![Working Portfolio Design](https://github.com/user-attachments/assets/5d932b0f-7d61-4907-a580-a0c36a6614ca)
+
+✨ **Features when working correctly:**
+- 🎨 Animated gradient background with floating purple/blue orbs
+- 🎯 Modern navigation bar with theme toggle
+- 💎 Beautiful styled cards for projects and skills
+- 🌈 Professional blue/purple/green color scheme
+- ✨ Smooth scroll animations and transitions
+- 📱 Fully responsive design
+- 💼 Professional typography with custom fonts
+
+**Key Difference:**
+- ❌ `file:///path/to/index.html` → Plain, unstyled text
+- ✅ `http://localhost:8080` → Full design with all features
+
+**Why This Happens:**
+Modern browsers restrict what `file://` URLs can do for security reasons:
+- Can't load external fonts from Google Fonts
+- Can't properly load CSS files in some cases
+- JavaScript features are limited
+- CORS (Cross-Origin Resource Sharing) blocks external resources
+
+💡 **Remember:** Always use a local server to view web projects, never just double-click HTML files!
+
+---
+
 ## 🚀 View Your Updated Portfolio
 
 After pulling the changes, view your updated portfolio:

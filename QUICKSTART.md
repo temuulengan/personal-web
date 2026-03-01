@@ -151,6 +151,56 @@ Edit `index.html` and update:
 
 ## ❓ Troubleshooting
 
+### Problem: Website Shows No Design / Looks Plain
+
+**Symptoms:**
+- Website opens but looks like plain text with no colors/styling
+- No background gradient or animations
+- Just black text on white background
+- Links and buttons look basic
+
+**What Happened:** You opened `index.html` directly by double-clicking it instead of using a local server!
+
+**Why It Doesn't Work:**
+When you double-click `index.html`, your browser opens it as `file:///path/to/index.html`. Modern web features (like CSS, fonts, animations) need to be served through HTTP (`http://localhost:8080`) to work properly.
+
+**✅ Solution:** You MUST use a local server (see Step 2 above):
+
+```bash
+# Navigate to the folder
+cd personal-web
+
+# Start a server (choose one):
+python3 -m http.server 8080
+# OR
+python -m SimpleHTTPServer 8080
+# OR
+npx http-server -p 8080
+
+# Then open in browser:
+# http://localhost:8080
+```
+
+**Screenshot of Working Design:**
+
+When served properly, your portfolio looks like this with full design:
+
+![Working Portfolio Design](https://github.com/user-attachments/assets/5d932b0f-7d61-4907-a580-a0c36a6614ca)
+
+✨ Features you should see:
+- Animated gradient background with floating orbs
+- Modern navigation bar
+- Styled buttons and cards
+- Professional color scheme (blues, purples)
+- Smooth animations and transitions
+- Beautiful typography
+
+**Remember:** ❌ Don't double-click HTML → ✅ Always use a local server!
+
+---
+
+### Other Common Issues
+
 **Port already in use?**
 ```bash
 python3 -m http.server 8081  # Try port 8081

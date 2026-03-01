@@ -29,6 +29,25 @@ cd personal-web
 2. Click green "Code" button → "Download ZIP"
 3. Unzip and navigate to the folder
 
+### ⚠️ IMPORTANT: Use a Local Server (Don't Just Double-Click index.html!)
+
+**Why?** Modern web features (CSS, fonts, animations) need HTTP protocol to work. Double-clicking `index.html` opens it as `file://` which won't show the design!
+
+**✅ RIGHT WAY - Use a server:**
+```bash
+cd personal-web
+python3 -m http.server 8080
+# Then open: http://localhost:8080
+```
+
+**❌ WRONG WAY - Don't do this:**
+- Double-clicking `index.html` in Finder/Explorer
+- Opening it directly in browser shows plain text with no design
+
+**What it should look like when working:**
+
+![Working Portfolio](https://github.com/user-attachments/assets/5d932b0f-7d61-4907-a580-a0c36a6614ca)
+
 ### Then: See it locally in 30 seconds
 ```bash
 cd personal-web
